@@ -1,0 +1,1032 @@
+<!DOCTYPE>
+<html class="" >
+<head>
+  <base href="https://www.tigarbo.ru/" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>TIGARBO</title>
+  <link href="/?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+  <link href="/?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
+  <link href="/templates/vt_industrial/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="/media/system/css/modal.css" type="text/css" />
+  <link rel="stylesheet" href="/components/com_k2/css/k2.css" type="text/css" />
+  <link rel="stylesheet" href="/plugins/system/jcemediabox/css/jcemediabox.css?version=113" type="text/css" />
+  <link rel="stylesheet" href="/plugins/system/jcemediabox/themes/standard/css/style.css?version=113" type="text/css" />
+  <link rel="stylesheet" href="/templates/vt_industrial/vtemtools/menus/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://www.tigarbo.ru/modules/mod_news_pro_gk4/interface/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="/media/com_acymailing/css/module_default.css" type="text/css" />
+  <link rel="stylesheet" href="https://www.tigarbo.ru/modules/mod_vtem_imageshow/css/styles.css" type="text/css" />
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="/media/system/js/modal.js" type="text/javascript"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>
+  <script src="/components/com_k2/js/k2.js" type="text/javascript"></script>
+  <script src="/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="/plugins/system/jcemediabox/js/jcemediabox.js?version=113" type="text/javascript"></script>
+  <script src="/templates/vt_industrial/vtemtools/menus/vtem_menu.js" type="text/javascript"></script>
+  <script src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/interface/scripts/engine.js" type="text/javascript"></script>
+  <script src="/media/com_acymailing/js/acymailing_module.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});var K2SitePath = '/';
+		if(typeof(k2storeURL) == 'undefined') {
+		var k2storeURL = 'https://www.tigarbo.ru/';
+		}
+		window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:"6,0,2,0",realmedia:"7,0,0,0",shockwave:"8,5,1,0"});JCEMediaBox.init({popup:{width:"",height:"",legacy:0,lightbox:0,shadowbox:0,resize:1,icons:1,overlay:1,overlayopacity:0.8,overlaycolor:"#000000",fadespeed:500,scalespeed:500,hideobjects:0,scrolling:"fixed",close:2,labels:{'close':'Закрыть','next':'Следующее','previous':'Предыдущее','cancel':'Отменить','numbers':'{$current} из {$total}'}},tooltip:{className:"tooltip",opacity:0.8,speed:150,position:"br",offsets:{x: 16, y: 16}},base:"/",imgpath:"plugins/system/jcemediabox/img",theme:"standard",themecustom:"",themepath:"plugins/system/jcemediabox/themes"});<!--
+					var acymailing = Array();
+					acymailing['NAMECAPTION'] = 'Имя';
+					acymailing['NAME_MISSING'] = 'Пожалуйста, введите свое имя';
+					acymailing['EMAILCAPTION'] = 'Адрес эл. почты';
+					acymailing['VALID_EMAIL'] = 'Пожалуйста, введите корректный эл. адрес';
+					acymailing['ACCEPT_TERMS'] = 'Пожалуйста, ознакомьтесь с \'Условиями и положениями\'';
+					acymailing['CAPTCHA_MISSING'] = 'Пожалуйста, введите защитный код, отображаемый на картинке';
+					acymailing['NO_LIST_SELECTED'] = 'Пожалуйста, выберите рассылки, на которые вы хотите подписаться';
+			//-->function keepAlive() {	var myAjax = new Request({method: "get", url: "index.php"}).send();} window.addEvent("domready", function(){ keepAlive.periodical(3600000); });
+  </script>
+  <!-- Youtube Gallery Hot Video Switch -->
+<script type="text/javascript">
+
+	var YoutubeGalleryVideoSources6 = ["youtube", "vimeo", "break", "own3dtvlive", "own3dtvvideo", "google", "yahoo", "collegehumor", "dailymotion"];
+	var YoutubeGalleryPlayer6 = new Array;
+
+	YoutubeGalleryPlayer6[0]='<!-- youtube player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><object  id="youtubegalleryplayerid_6" width="600" height="400" data="https://www.youtube-nocookie.com/v/****youtubegallery-video-id****?version=3&amp;autoplay=0&amp;hl=en&amp;fs=0&amp;showinfo=0&amp;iv_load_policy=3&amp;rel=0&amp;loop=0&amp;border=0&amp;controls=1" type="application/x-shockwave-flash" onLoad="YoutubeGalleryAutoResizePlayer6();"><param name="id" value="youtubegalleryplayerid_6" /><param name="movie" value="https://www.youtube-nocookie.com/v/****youtubegallery-video-id****?version=3&amp;autoplay=0&amp;hl=en&amp;fs=0&amp;showinfo=0&amp;iv_load_policy=3&amp;rel=0&amp;loop=0&amp;border=0&amp;controls=1" /><param name="wmode" value="transparent" /><param name="allowFullScreen" value="false" /><param name="allowscriptaccess" value="always" /></object></div>';
+	YoutubeGalleryPlayer6[1]='<!-- vimeo player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><iframe src="http://player.vimeo.com/video/****youtubegallery-video-id****?portrait=0&amp;title=0&amp;byline=0&amp;autoplay=0&amp;loop=0" id="youtubegalleryplayerid_6" width="600" height="400" frameborder="0" onLoad="YoutubeGalleryAutoResizePlayer6();"></iframe></div>';
+	YoutubeGalleryPlayer6[2]='<!-- break player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><object width="600" height="400" id="youtubegalleryplayerid_6" type="application/x-shockwave-flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" alt="" onLoad="YoutubeGalleryAutoResizePlayer6();"> <param name="movie" value="http://embed.break.com/KioqKnlvdXR1YmVnYWxsZXJ5LXZpZGVvLWlkKioqKg==" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="playerversion=12&defaultHD=true" /><param name="id" value="youtubegalleryplayerid_6" /><param name="allowFullScreen" value="false" /><embed src="http://embed.break.com/KioqKnlvdXR1YmVnYWxsZXJ5LXZpZGVvLWlkKioqKg==" type="application/x-shockwave-flash" flashvars="playerversion=12&defaultHD=true" allowScriptAccess="always" allowfullscreen="false" width="600" height="400" /></object></div>';
+	YoutubeGalleryPlayer6[3]='<!-- own3dtvlive player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><object width="600" height="400"><param name="movie" value="http://www.own3d.tv/livestream/****youtubegallery-video-id****;autoplay=" /><param name="allowscriptaccess" value="always" /><param name="allowfullscreen" value="true" /><param name="wmode" value="transparent" /><embed src="http://www.own3d.tv/livestream/****youtubegallery-video-id****;autoplay=true" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="400" wmode="transparent"></embed></object></div>';
+	YoutubeGalleryPlayer6[4]='<!-- own3dtvvideo player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><object width="600" height="400"><param name="movie" value="http://www.own3d.tv/stream/****youtubegallery-video-id****;autoplay=" /><param name="allowscriptaccess" value="always" /><param name="allowfullscreen" value="true" /><param name="wmode" value="transparent" /><embed src="http://www.own3d.tv/stream/****youtubegallery-video-id****;autoplay=true" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="400" wmode="transparent"></embed></object></div>';
+	YoutubeGalleryPlayer6[5]='<!-- google player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><embed id="youtubegalleryplayerid_6" src="http://video.google.com/googleplayer.swf?docid=****youtubegallery-video-id****&hl=en&fs=false" style="width:600px;height:400px;" allowFullScreen="false" allowScriptAccess="always" onLoad="YoutubeGalleryAutoResizePlayer6();" type=application/x-shockwave-flash></embed></div>';
+	YoutubeGalleryPlayer6[6]='<!-- yahoo player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><p>Not sopported in this version due to Yahoo service changes.</p></div>';
+	YoutubeGalleryPlayer6[7]='<!-- collegehumor player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><object id="youtubegalleryplayerid_6" type="application/x-shockwave-flash" data="http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=****youtubegallery-video-id****&use_node_id=true&fullscreen=0" width="600" height="400" alt="" onLoad="YoutubeGalleryAutoResizePlayer6();"><param name="id" value="youtubegalleryplayerid_6" /><param name="movie" quality="best" value="http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=****youtubegallery-video-id****&use_node_id=true&fullscreen=0" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="false" /><param name="wmode" value="transparent"/><embed src="http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=****youtubegallery-video-id****&use_node_id=true&fullscreen=0" type="application/x-shockwave-flash" wmode="transparent" allowScriptAccess="always" allowfullscreen="false" width="600" height="400" /> </object></div>';
+	YoutubeGalleryPlayer6[8]='<!-- dailymotion player --><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><iframe  id="youtubegalleryplayerid_6" alt="" frameborder="0" width="600" height="400" src="http://www.dailymotion.com/embed/video/****youtubegallery-video-id****?autoplay=0&amp;related=0&amp;controls=1&amp;logo=1&amp;info=0" onLoad="YoutubeGalleryAutoResizePlayer6();"></iframe></div>';
+
+	function YoutubeGalleryHotVideoSwitch6(videoid,videosource,id)
+	{
+		var i=YoutubeGalleryVideoSources6.indexOf(videosource);
+		if(i==-1)
+			playercode="";
+		else
+			playercode=YoutubeGalleryPlayer6[i];
+		playercode=playercode.replace("****youtubegallery-video-id****",videoid);
+		
+		var title=document.getElementById("YoutubeGalleryThumbTitle6_"+id).innerHTML
+		var description=document.getElementById("YoutubeGalleryThumbDescription6_"+id).innerHTML
+		
+		document.getElementById("YoutubeGallerySecondaryContainer6").innerHTML=playercode;
+		
+		var tObj=document.getElementById("YoutubeGalleryVideoTitle6");
+		var dObj=document.getElementById("YoutubeGalleryVideoDescription6");
+		
+		if(tObj)
+		{
+			tObj.innerHTML=title;
+		}
+		
+		if(dObj)
+		{
+			dObj.innerHTML=description;
+		}
+		
+	}
+</script>
+  <link rel="image_src" href="https://img.youtube.com/vi/Mp65fTxoZCw/0.jpg" />
+  <link rel="image_src" href="https://img.youtube.com/vi/Mp65fTxoZCw/0.jpg" />
+
+<link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="/templates/system/css/general.css" type="text/css" />
+<link rel="stylesheet" href="/templates/vt_industrial/css/template.css" type="text/css" />
+<link rel="stylesheet" href="/templates/vt_industrial/css/styles/style3.css" type="text/css" />
+<style type="text/css">
+div.vt_container{
+width:980px;
+margin:0 auto;
+display:block;
+clear:both;
+}
+.width100{width:980px;}
+.width50{width:490px;}
+.width33{width:326.66666666667px;}
+.width25{width:245px;}
+.width20{width:196px;}
+.width15{width:163.33333333333px;}
+.floatleft{float:left;}
+.floatright{float:right;}
+.none{display:none !important; visibility:hidden !important;}
+.navleft,.navright{width:230px;}
+.navleft1,.navright1{width:270px;}
+.contentwidth{width:470px !important;}
+.contentwidth1{width:670px !important;} 
+.widthinset100{width:100%;}
+.widthinset50{width:50%;}
+</style>
+<script type="text/javascript">
+if(typeof jQuery != "undefined" && jQuery){
+    jQuery(document).ready(function(){
+        if(jQuery(".mod_about") && jQuery(".mod_about").length){
+            if(jQuery(".mod_about")[0].parentNode && jQuery(".mod_about")[0].parentNode.className && jQuery(".mod_about")[0].parentNode.className.toLowerCase() == "vt_module_inside"){
+              jQuery(".mod_about").wrap('<div class="vt_moduletable clearfix moduletable_menu"><div class="vt_box"></div></div>');
+            };
+        };
+    });
+};
+</script>
+</head>
+<body id="vtem">
+<div id="vt_body_wrapper">
+    <div id="vt_main_top">
+    <div class="vt_wapper_mainmenu">
+    <div class="vt_container ">
+      <div class="vt_menufix clearfix">
+        <!-- /////////////////// VTEM MENU ///////////////////////////////-->
+         <div id="vt_main_menu">
+             <div id="vtem_menu" class="mlmenu plus blindv">
+<ul class="menu_vtem_nav">
+<li id="item-837"><a href="http://tigarbo.ru/" ><span>ГЛАВНАЯ</span></a></li><li id="item-721"><a href="/o-kompanii.html" > <span> О КОМПАНИИ</span></a></li><li id="item-488" class="parent"><a href="/produktsiya.html" > <span> ПРОДУКЦИЯ</span></a><ul><li id="item-742" class="parent"><a href="/produktsiya/avtobetonosmesiteli.html" > <span> Автобетоносмесители</span></a><ul><li id="item-881"><a href="/produktsiya/avtobetonosmesiteli/abs-3-m3.html" > <span> АБС 3 м3</span></a></li><li id="item-760"><a href="/produktsiya/avtobetonosmesiteli/abs-4-m3.html" > <span> АБС 4 м3</span></a></li><li id="item-761"><a href="/produktsiya/avtobetonosmesiteli/abs-5-m3.html" > <span> АБС 5 м3</span></a></li><li id="item-762"><a href="/produktsiya/avtobetonosmesiteli/abs-6-m3.html" > <span> АБС 6 м3</span></a></li><li id="item-763"><a href="/produktsiya/avtobetonosmesiteli/abs-7-m3.html" > <span> АБС 7 м3</span></a></li><li id="item-764"><a href="/produktsiya/avtobetonosmesiteli/abs-8-m3.html" > <span> АБС 8 м3</span></a></li><li id="item-765"><a href="/produktsiya/avtobetonosmesiteli/abs-9-m3.html" > <span> АБС 9 м3</span></a></li><li id="item-766"><a href="/produktsiya/avtobetonosmesiteli/abs-10-m3.html" > <span> АБС 10 м3</span></a></li><li id="item-767"><a href="/produktsiya/avtobetonosmesiteli/abs-11-m3.html" > <span> АБС 11 м3</span></a></li><li id="item-768"><a href="/produktsiya/avtobetonosmesiteli/abs-12-m3.html" > <span> АБС 12 м3</span></a></li><li id="item-884"><a href="/produktsiya/avtobetonosmesiteli/faw.html" > <span> FAW</span></a></li><li id="item-885"><a href="/produktsiya/avtobetonosmesiteli/howo.html" > <span> HOWO</span></a></li><li id="item-770"><a href="/produktsiya/avtobetonosmesiteli/utilizatsiya.html" > <span> Утилизация</span></a></li><li id="item-771"><a href="/produktsiya/avtobetonosmesiteli/videorolik.html" > <span> Видеоролик</span></a></li></ul></li><li id="item-855"><a href="/produktsiya/unimiks-4.html" > <span> УНИМИКС-4</span></a></li><li id="item-772" class="parent"><a href="https://tigarbo.trade" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,');return false;" ><span>Электроды сварочные</span></a><ul><li id="item-776"><a href="/produktsiya/elektrody-svarochnye/ano-24.html" > <span> АНО-24</span></a></li><li id="item-775"><a href="/produktsiya/elektrody-svarochnye/ano-21.html" > <span> АНО-21</span></a></li><li id="item-817"><a href="/produktsiya/elektrody-svarochnye/ano-21premium.html" > <span> АНО-21 Премиум</span></a></li><li id="item-847"><a href="/produktsiya/elektrody-svarochnye/ano-21-assorti.html" > <span> АНО-21 Ассорти</span></a></li><li id="item-777"><a href="/produktsiya/elektrody-svarochnye/mr-3.html" > <span> МР-3</span></a></li><li id="item-778"><a href="/produktsiya/elektrody-svarochnye/uoni-13-55.html" > <span> УОНИ-13/55</span></a></li><li id="item-781"><a href="/produktsiya/elektrody-svarochnye/anch-v.html" > <span> АНЧ-В</span></a></li><li id="item-875"><a href="/produktsiya/elektrody-svarochnye/elektrody-svarochnye-austrian-2155.html" > <span> Электроды сварочные Austrian 2155</span></a></li></ul></li><li id="item-782" class="parent"><a href="http://tigarbo.trade" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,');return false;" ><span>Абразивная продукция	</span></a><ul><li id="item-784"><a href="/produktsiya/abrazivnaya-produktsiya/krugi-otreznye-po-stali.html" > <span> Круги отрезные по стали</span></a></li><li id="item-789"><a href="/produktsiya/abrazivnaya-produktsiya/shlifovalnye-krugi.html" > <span> Шлифовальные круги</span></a></li></ul></li><li id="item-790" class="parent"><a href="/produktsiya/motornye-katamarany.html" > <span> Моторные катамараны</span></a><ul><li id="item-872"><a href="/produktsiya/motornye-katamarany/passazhirskoe-progulochnoe-sudno-km-100-30.html" > <span> Пассажирское прогулочное судно КМ-100-30</span></a></li><li id="item-793"><a href="/produktsiya/motornye-katamarany/videorolik.html" > <span> Видеоролик</span></a></li></ul></li><li id="item-853" class="parent"><a href="/produktsiya/pochvoobrabatyvayushchaya-tekhnika.html" > <span> Почвообрабатывающая техника</span></a><ul><li id="item-794"><a href="/produktsiya/pochvoobrabatyvayushchaya-tekhnika/agregaty-diskovye.html" > <span> Агрегаты дисковые</span></a></li><li id="item-856"><a href="/produktsiya/pochvoobrabatyvayushchaya-tekhnika/kpn.html" > <span> Культиваторы</span></a></li><li id="item-873"><a href="/produktsiya/pochvoobrabatyvayushchaya-tekhnika/plyg-cizelny.html" > <span> Плуг чизельный</span></a></li><li id="item-880"><a href="/produktsiya/pochvoobrabatyvayushchaya-tekhnika/borona-nozhevaya.html" > <span> Борона ножевая</span></a></li></ul></li><li id="item-851" class="parent"><a href="/produktsiya/parkovye-fonari.html" > <span> Парковые фонари</span></a><ul><li id="item-854"><a href="/produktsiya/parkovye-fonari/zakazat.html" > <span> Заказать</span></a></li></ul></li><li id="item-795"><a href="/produktsiya/vesy-avtomobilnye.html" > <span> Весы автомобильные</span></a></li><li id="item-877"><a href="http://tigarbo.eco" target="_blank" ><span>Электротранспорт</span></a></li><li id="item-870"><a href="/produktsiya/samohodni-ponton.html" > <span> Самоходный понтон</span></a></li><li id="item-878"><a href="/produktsiya/mini-domik.html" > <span> Мобильный дом</span></a></li><li id="item-879"><a href="/produktsiya/besedka-dlya-otdykha.html" > <span> Беседка для отдыха</span></a></li><li id="item-886"><a href="/produktsiya/podnozhka-dlya-stola.html" > <span> Подножка для стола</span></a></li><li id="item-887"><a href="/produktsiya/sadovo-parkovaya-mebel.html" > <span> Садово-парковая мебель</span></a></li><li id="item-797"><a href="/produktsiya/zagruzit.html" > <span> Загрузить</span></a></li></ul></li><li id="item-874"><a href="/sertifikaty.html" > <span> СЕРТИФИКАТЫ</span></a></li><li id="item-871"><a href="/lizing.html" > <span> ЛИЗИНГ</span></a></li><li id="item-492"><a href="/forum/" ><span>ФОРУМ</span></a></li><li id="item-498"><a href="/stati.html" > <span> НОВОСТИ</span></a></li><li id="item-503" class="parent"><a href="/kontakty.html" > <span> КОНТАКТЫ</span></a><ul><li id="item-798"><a href="/kontakty/nash-adres.html" > <span> Наш адрес</span></a></li><li id="item-799"><a href="/kontakty/dilery-po-avtobetonosmesiteli.html" > <span> Дилеры по автобетоносмесителям</span></a></li><li id="item-815"><a href="/kontakty/dilery-po-selkhoztekhnike.html" > <span> Дилеры по сельхозтехнике</span></a></li><li id="item-883"><a href="/kontakty/dilery-po-svarochnym-elektrodam-i-abrazivnym-krugam.html" > <span> Дилеры по сварочным электродам и абразивным кругам</span></a></li><li id="item-804"><a href="/kontakty/servisnye-tsentry.html" > <span> Сервисные центры</span></a></li><li id="item-814"><a href="/kontakty/nashi-partnery.html" > <span> Наши партнёры </span></a></li><li id="item-808"><a href="/kontakty/sertifitsirovannye-sborochnye-tsentry.html" > <span> Сертифицированные сборочные центры</span></a></li><li id="item-882"><a href="/kontakty/dokumenti.html" > <span> Документы</span></a></li></ul></li></ul></div>         </div>
+         <!-- /////////////////// END VTEM MENU ///////////////////////////--> 
+        </div>   
+     <div class="vt_logo_top clearfix">
+          <div id="vt_logo">
+                <a href="/"><img src="/templates/vt_industrial/css/styles/vt_logo_style3.png" alt="VTEM Logo" /></a>             </div>
+             
+                      <div id="vt_top">
+                 		<div class="moduletable search-at-left">
+					<form action="/" method="post">
+	<div class="search search-at-left">
+		<label for="mod-search-searchword"> </label><input name="searchword" id="mod-search-searchword" maxlength="20"  class="inputbox search-at-left" type="text" size="20" value="Поиск..."  onblur="if (this.value=='') this.value='Поиск...';" onfocus="if (this.value=='Поиск...') this.value='';" /><input type="submit" value="Искать" class="button search-at-left" onclick="this.form.searchword.focus();"/>	<input type="hidden" name="task" value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="480" />
+	</div>
+</form>
+		</div>
+			<div class="moduletable top-contacts">
+					
+
+<div class="custom top-contacts"  >
+	<div style="text-align: right;"><strong style="font-size: 13.3333px; line-height: 1.8;"><span style="color: #000000;"><span style="font-family: arial, helvetica, sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></span></strong></div>
+<p style="text-align: right;"><strong style="text-align: left; line-height: 1.8;"><span style="font-size: 12pt; color: #000000;"><span style="font-size: 24pt;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img style="vertical-align: bottom;" src="/images/Рисунок1.gif" alt="Рисунок1" width="47" height="47" /><span style="font-family: arial, helvetica, sans-serif;">8 (800) 234-96-60</span></span></span></strong><span style="font-family: arial, helvetica, sans-serif;"><strong><span style="font-size: 12pt; color: #000000;"><br /></span></strong></span></p>
+<p style="text-align: right;"><strong style="text-align: left; line-height: 1.8;"><span style="font-size: 12pt; color: #000000;"><span style="font-size: 24pt;"><span style="font-family: arial, helvetica, sans-serif;"></span></span></span></strong></p>
+<p style="text-align: right;"><strong style="text-align: left; line-height: 1.8;"><span style="font-size: 12pt; color: #000000;"><span style="font-size: 24pt;"><span style="font-family: arial, helvetica, sans-serif;"></span></span></span></strong></p>
+<p style="text-align: right;">&nbsp;</p>
+<p style="text-align: right;">&nbsp;</p></div>
+		</div>
+	
+               </div>
+                   </div>     
+      </div>
+      </div>
+    </div>     
+   <!-- /////////////////// MAIN LAYOUT ///////////////////////////////-->
+   <div id="vt_main_show">
+<div class="vt_container">
+        <div id="vt_feature">
+                                   <div class="width100  floatleft">
+		    <div class="vt_module_inside">
+              		<div class="vt_moduletable clearfix moduletable">
+        <div class="vt_box">
+					<link rel="stylesheet" id="camera-css"  href="https://www.tigarbo.ru/modules/mod_vtem_imageshow/css/camera.css" type="text/css" media="all">
+<script type="text/javascript" src="https://www.tigarbo.ru/modules/mod_vtem_imageshow/js/jquery.mobile.customized.min.js"></script>
+<script type="text/javascript" src="https://www.tigarbo.ru/modules/mod_vtem_imageshow/js/jquery.easing.1.3.js"></script> 
+<script type="text/javascript" src="https://www.tigarbo.ru/modules/mod_vtem_imageshow/js/camera.js"></script> 
+<div class="camera_wrap camera_azure_skin" id="camera_wrap_90">
+	 <div data-thumb="images/slides/Elekar.jpg" data-src="/images/slides/Elekar.jpg">
+		<div class="camera_caption fadeFromRight">
+          				<a href="http://tigarbo.eco/">
+							Электромобили TIGARBO	 				       		
+						</a>
+					</div>
+	</div>
+	 <div data-thumb="images/slides/Fonar1.jpg" data-src="/images/slides/Fonar1.jpg">
+		<div class="camera_caption fadeFromRight">
+          				<a href="http://www.tigarbo.ru/produktsiya/parkovye-fonari.html">
+							 Фонари парковые	 				       		
+						</a>
+					</div>
+	</div>
+	 <div data-thumb="images/slides/KM 1.jpg" data-src="/images/slides/KM 1.jpg">
+		<div class="camera_caption fadeFromRight">
+          				<a href="http://www.tigarbo.ru/produktsiya/motornye-katamarany/passazhirskoe-progulochnoe-sudno-km-100-30.html">
+							 Моторные катамараны	 				       		
+						</a>
+					</div>
+	</div>
+	 <div data-thumb="images/slides/Unimiks1.jpg" data-src="/images/slides/Unimiks1.jpg">
+		<div class="camera_caption fadeFromRight">
+          				<a href="http://www.tigarbo.ru/produktsiya/motornye-katamarany.html">
+							 Универсальная бетоносмесительная машина УНИМИКС-4	 				       		
+						</a>
+					</div>
+	</div>
+	 <div data-thumb="images/slides/abs2.jpg" data-src="/images/slides/abs2.jpg">
+		<div class="camera_caption fadeFromRight">
+          				<a href="http://www.tigarbo.ru/produktsiya/unimiks-4.html">
+							 Автобетоносмесители TIGARBO	 				       		
+						</a>
+					</div>
+	</div>
+</div>
+<script type="text/javascript">
+//<!--
+	jQuery(function(){
+			jQuery("#camera_wrap_90").camera({
+							loader: "none",
+							pagination: true,
+            	        	portrait: true,
+            	        	height: "431px",
+            	        	loader: "none",
+            	        	time: 3000,
+            	        	transPeriod: 800,
+            	        	slideType: "random",
+            	        	autoAdvance: "1",
+            	        	thumbnails: ""
+			});
+	});
+//-->
+</script>
+         </div>   
+		</div>
+	
+			</div>
+         </div>
+                  		 		 	     <div class="clr"></div>
+	 </div>
+      
+	 <div id="vt_main_contaner">
+        <div id="vt_wappermain_box"> 
+         <div id="vt_main_inside">
+	      	         	             <div id="vt_nav_left" class="vt_auto_cols navleft1 floatleft">
+				   <div class="vt_module_inside">
+	                 <div class="vt_module_inside">		<div class="vt_moduletable clearfix moduletable_menu">
+        <div class="vt_box">
+					
+<ul class="menu mod_about vt_moduletable clearfix moduletable_menu">
+<li id="item-837"><a href="http://tigarbo.ru/" ><span>ГЛАВНАЯ</span></a></li><li id="item-721"><a href="/o-kompanii.html" > <span> О КОМПАНИИ</span></a></li><li id="item-488"><a href="/produktsiya.html" > <span> ПРОДУКЦИЯ</span></a></li><li id="item-874"><a href="/sertifikaty.html" > <span> СЕРТИФИКАТЫ</span></a></li><li id="item-871"><a href="/lizing.html" > <span> ЛИЗИНГ</span></a></li><li id="item-492"><a href="/forum/" ><span>ФОРУМ</span></a></li><li id="item-498"><a href="/stati.html" > <span> НОВОСТИ</span></a></li><li id="item-503"><a href="/kontakty.html" > <span> КОНТАКТЫ</span></a></li></ul>         </div>   
+		</div>
+			<div class="vt_moduletable clearfix moduletable">
+        <div class="vt_box">
+					<h3><span class="vt_heading1"><span class="vt_heading2">Подписка на новости</span></span></h3>
+					<div class="acymailing_module" id="acymailing_module_formAcymailing49101">
+	<div class="acymailing_fulldiv" id="acymailing_fulldiv_formAcymailing49101"  >
+		<form id="formAcymailing49101" action="/" onsubmit="return submitacymailingform('optin','formAcymailing49101')" method="post" name="formAcymailing49101"  >
+		<div class="acymailing_module_form" >
+									<table class="acymailing_form">
+				<tr>
+												<td class="acyfield_email">
+								<input id="user_email_formAcymailing49101"  onfocus="if(this.value == 'Адрес эл. почты') this.value = '';" onblur="if(this.value=='') this.value='Адрес эл. почты';" class="inputbox" type="text" name="user[email]" style="width:80%" value="Адрес эл. почты" />
+							</td> </tr><tr>
+					<td  class="acysubbuttons">
+												<input class="button subbutton btn btn-primary" type="submit" value="Подписаться" name="Submit" onclick="try{ return submitacymailingform('optin','formAcymailing49101'); }catch(err){alert('The form could not be submitted '+err);return false;}"/>
+											</td>
+				</tr>
+			</table>
+						<input type="hidden" name="ajax" value="0"/>
+			<input type="hidden" name="ctrl" value="sub"/>
+			<input type="hidden" name="task" value="notask"/>
+			<input type="hidden" name="redirect" value="https%3A%2F%2Fwww.tigarbo.ru%2F"/>
+			<input type="hidden" name="redirectunsub" value="https%3A%2F%2Fwww.tigarbo.ru%2F"/>
+			<input type="hidden" name="option" value="com_acymailing"/>
+						<input type="hidden" name="hiddenlists" value="1"/>
+			<input type="hidden" name="acyformname" value="formAcymailing49101" />
+									</div>
+		</form>
+	</div>
+	</div>
+         </div>   
+		</div>
+			<div class="vt_moduletable clearfix moduletable">
+        <div class="vt_box">
+					<h3><span class="vt_heading1"><span class="vt_heading2">Вход на сайт</span></span></h3>
+					<form action="/" method="post" id="login-form" >
+		<fieldset class="userdata">
+	<p id="form-login-username">
+		<label for="modlgn-username">Логин</label>
+		<input id="modlgn-username" type="text" name="username" class="inputbox"  size="18" />
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn-passwd">Пароль</label>
+		<input id="modlgn-passwd" type="password" name="password" class="inputbox" size="18"  />
+	</p>
+		<p id="form-login-remember">
+		<label for="modlgn-remember">Запомнить меня</label>
+		<input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/>
+	</p>
+		<button type="submit" name="task_button" class="button_round"><span class="button_round1"><span>
+	Войти    </span></span></button>
+	<input type="hidden" name="option" value="com_users" />
+	<input type="hidden" name="task" value="user.login" />
+	<input type="hidden" name="return" value="aW5kZXgucGhwP0l0ZW1pZD00Nzk=" />
+	<input type="hidden" name="9ef6eaf4a58d85170c8a92e79f9fb038" value="1" />	</fieldset>
+	<ul>
+		<li>
+			<a href="/shop-login.html?view=reset">
+			Забыли пароль?</a>
+		</li>
+		<li>
+			<a href="/shop-login.html?view=remind">
+			Забыли логин?</a>
+		</li>
+			</ul>
+	</form>
+         </div>   
+		</div>
+			<div class="vt_moduletable clearfix moduletable">
+        <div class="vt_box">
+					<h3><span class="vt_heading1"><span class="vt_heading2">Наши новости</span></span></h3>
+					
+
+<div id="k2ModuleBox94" class="k2ItemsBlock">
+
+	
+	  <ul>
+        <li class="even">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      
+      
+            <a class="moduleItemTitle" href="/stati/item/384-akcziya-stabilnyj-god-ot-rosagrolizing.html">Акция "Стабильный год" от РОСАГРОЛИЗИНГ</a>
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+            <div class="moduleItemIntrotext">
+	      	      <a class="moduleItemImage" href="/stati/item/384-akcziya-stabilnyj-god-ot-rosagrolizing.html" title="Продолжить чтение &quot;Акция &quot;Стабильный год&quot; от РОСАГРОЛИЗИНГ&quot;">
+	      	<img src="/media/k2/items/cache/011e88ef4a8328e08be9d913808b8290_XS.jpg" alt="Акция &quot;Стабильный год&quot; от РОСАГРОЛИЗИНГ"/>
+	      </a>
+	      
+      	      	Сельхозтехника и оборудование по сниженным ставкам с удорожанием от 3,3% в год и отсрочкой платежей&#8230;      	      </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+        <li class="odd">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      
+      
+            <a class="moduleItemTitle" href="/stati/item/381-proizvodstvo-novogo-avtobetonosmesitelya-na-polnoprivodnom-shassi.html">Производство нового автобетоносмесителя на полноприводном шасси</a>
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+            <div class="moduleItemIntrotext">
+	      	      <a class="moduleItemImage" href="/stati/item/381-proizvodstvo-novogo-avtobetonosmesitelya-na-polnoprivodnom-shassi.html" title="Продолжить чтение &quot;Производство нового автобетоносмесителя на полноприводном шасси&quot;">
+	      	<img src="/media/k2/items/cache/84c42b9986b8cecdea81ed6abb66c108_XS.jpg" alt="Производство нового автобетоносмесителя на полноприводном шасси"/>
+	      </a>
+	      
+      	      	Компания "КОМЗ-Экспорт" продолжает расширять линейку производимых автобетоносмесителей на полноприводных шасси 6х6 с односкатной ошиновкой. Совместно&#8230;      	      </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+        <li class="even lastItem">
+
+      <!-- Plugins: BeforeDisplay -->
+      
+      <!-- K2 Plugins: K2BeforeDisplay -->
+      
+      
+            <a class="moduleItemTitle" href="/stati/item/380-rasshiryaem-linejku-avtobetonosmesitelej.html">Расширяем линейку автобетоносмесителей</a>
+      
+      
+      <!-- Plugins: AfterDisplayTitle -->
+      
+      <!-- K2 Plugins: K2AfterDisplayTitle -->
+      
+      <!-- Plugins: BeforeDisplayContent -->
+      
+      <!-- K2 Plugins: K2BeforeDisplayContent -->
+      
+            <div class="moduleItemIntrotext">
+	      	      <a class="moduleItemImage" href="/stati/item/380-rasshiryaem-linejku-avtobetonosmesitelej.html" title="Продолжить чтение &quot;Расширяем линейку автобетоносмесителей&quot;">
+	      	<img src="/media/k2/items/cache/8b0dca3b357fcee94cf1b8a6c08994ea_XS.jpg" alt="Расширяем линейку автобетоносмесителей"/>
+	      </a>
+	      
+      	      	ЗАО "КОМЗ-Экспорт" расширяет производимую линейку автобетоносмесителей на полноприводных шасси. Изготовлены и отгружены заказчику несколько единиц&#8230;      	      </div>
+      
+      
+      <div class="clr"></div>
+
+      
+      <div class="clr"></div>
+
+      <!-- Plugins: AfterDisplayContent -->
+      
+      <!-- K2 Plugins: K2AfterDisplayContent -->
+      
+      
+      
+      
+      
+			
+			
+			
+      <!-- Plugins: AfterDisplay -->
+      
+      <!-- K2 Plugins: K2AfterDisplay -->
+      
+      <div class="clr"></div>
+    </li>
+        <li class="clearList"></li>
+  </ul>
+  
+	
+		<div class="k2FeedIcon">
+		<a href="/component/k2/itemlist.feed?moduleID=94" title="Подписаться на эту RSS-ленту">
+			<span>Подписаться на эту RSS-ленту</span>
+		</a>
+		<div class="clr"></div>
+	</div>
+	
+</div>
+         </div>   
+		</div>
+	</div>				   </div>
+	             </div>
+	                       
+                 <div id="vt_main_com" class="vt_auto_cols contentwidth1 floatleft">
+	                                   				   <div class="vt_component_inside">
+                    
+
+<div class="blog-featured">
+
+	
+	
+			<div class="items-row cols-1 row-0">
+				<div class="item column-1">
+			
+
+
+
+
+
+
+
+<div>&nbsp;&nbsp;</div>
+<div style="text-align: center;"><span style="text-align: justify;">ЗАО «КОМЗ-Экспорт» является производителем оборудования <span>и комплектующих для различных отраслей.</span></span></div>
+<div style="text-align: center;"><span style="text-align: justify;">Завод выпускает продукцию под торговой маркой TIGARBO.&nbsp;</span></div>
+<div style="text-align: center;"><span style="text-align: justify;">&nbsp;</span></div>
+<div style="text-align: left;"><span style="text-align: justify;"><img style="float: right;" src="/images/park.jpg" alt="" width="382" height="260" border="0" /><strong>Основу линейки продукции составляют:</strong></span></div>
+<ul>
+<li style="text-align: left;">Автобетоносмесители;</li>
+<li style="text-align: left;">Сварочные электроды;</li>
+<li style="text-align: left;">Абразивная продукция;</li>
+<li style="text-align: left;">Почвообрабатывающая техника;</li>
+<li style="text-align: left;">Моторные катамараны;</li>
+<li style="text-align: left;">Парковые фонари;</li>
+<li style="text-align: left;"><span>Электромобили.</span></li>
+</ul>
+<p style="text-align: justify;"><strong>Продукция торговой марки TIGARBO&nbsp; позволит модернизировать Ваше производство и значительно повысить его&nbsp;рентабельность и эффективность.</strong></p>
+<p style="text-align: justify;">ЗАО «КОМЗ-Экспорт», компания, основанная в 1999 году. На сегодняшний день завод имеет собственные производственные, сборочные и малярные цеха. &nbsp;Общая площадь производственных и складских помещений составляет 2,5 км. В компании работают высококлассные специалисты, что позволяет производить качественную продукцию, соответствующую всем требованиям современного потребителя. Передовые технологии и самые лучшие материалы, применяемые при производстве техники,&nbsp; являются гарантом качества продукции марки TIGARBO. Каждый изготовленный продукт соответствует всем действующим стандартам качества.</p>
+<p style="text-align: justify;">ЗАО «КОМЗ-Экспорт» дорожит своей репутацией и тщательно контролирует все производственные и технологические процессы, что входит в обязательные требования международного стандарта ISO 9001-2015. Благодаря высокой мощности и надежности, продукция компании занимает передовые позиции на рынке.</p>
+<h2 style="text-align: justify;">Преимущества продукции&nbsp;марки TIGARBO:</h2>
+<ul>
+<li style="text-align: justify;">Вся продукция торговой марки TIGARBO проходит все необходимые испытания в заводских условиях;</li>
+<li style="text-align: justify;">Наше оборудование соответствует всем стандартам качества, поэтому мы гарантируем бесперебойную работу техники;</li>
+<li style="text-align: justify;">Благодаря превосходным техническим характеристикам наша продукция подходит для эксплуатации в любых условиях;</li>
+<li style="text-align: justify;">Приобрести технику TIGARBO сможет организация любого масштаба, поскольку наши цены самые демократичные;</li>
+<li style="text-align: justify;">Специалисты компании не только помогут выбрать интересующую Вас продукцию, но и окажут спектр услуг, связанных с ее эксплуатацией.</li>
+</ul>
+<p>&nbsp;</p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Продукция торговой маркти TIGARBO - это престиж и гарантия успеха!</strong></span></em></p>
+<p style="text-align: center;">&nbsp;</p>
+<p>
+<!-- YouTube Gallery v3.1.1 -->
+<!-- YouTube Gallery http://joomlaboat.com/youtube-gallery -->
+
+<!-- Make it responsive to window size -->
+<script type="text/javascript">
+//<![CDATA[
+
+function YoutubeGalleryClientWidth6() {
+	return YoutubeGalleryResults6 (
+		window.innerWidth ? window.innerWidth : 0,
+		document.documentElement ? document.documentElement.clientWidth : 0,
+		document.body ? document.body.clientWidth : 0
+	);
+}
+function YoutubeGalleryScrollLeft6() {
+	return YoutubeGalleryResults6 (
+		window.pageXOffset ? window.pageXOffset : 0,
+		document.documentElement ? document.documentElement.scrollLeft : 0,
+		document.body ? document.body.scrollLeft : 0
+	);
+}
+function YoutubeGalleryFindHorizontalOffset6(id) {
+	var node = document.getElementById(id);     
+	var curleft = 0;
+	var curleftscroll = 0;
+	var scroll_left = YoutubeGalleryScrollLeft6();
+	if (node.offsetParent) {
+	        do {
+		        curleft += node.offsetLeft;
+		        curleftscroll =0;
+		} while (node = node.offsetParent);
+
+		var imaged_x=(curleft - curleftscroll)-scroll_left;
+		return imaged_x;
+		}
+		return 0;
+	}
+function YoutubeGalleryResults6(n_win, n_docel, n_body) {
+	var n_result = n_win ? n_win : 0;
+	if (n_docel && (!n_result || (n_result > n_docel)))
+		n_result = n_docel;
+		return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+	}		
+function YoutubeGalleryAutoResizePlayer6(){
+	var clientWidth=YoutubeGalleryClientWidth6();
+	var playerObject=document.getElementById("youtubegalleryplayerid_6");
+	var mainObject=document.getElementById("YoutubeGalleryMainContainer6");
+	var secondaryObject=document.getElementById("YoutubeGallerySecondaryContainer6");
+	var playerWidth=600;
+	var x=YoutubeGalleryFindHorizontalOffset6("YoutubeGalleryMainContainer6");
+	
+	var setWidth=false;
+	
+	if(x+playerWidth>clientWidth)
+	{
+		playerWidth=clientWidth-x;
+		setWidth=true;
+	}
+	else
+	{
+		if(playerObject.width!=playerWidth)
+			setWidth=true;
+	}
+	
+	if(setWidth)
+	{
+		mainObject.style.width= (playerWidth) + "px";
+		secondaryObject.style.width= (playerWidth) + "px";
+		var newH=400/(600/playerWidth);
+		playerObject.width= (playerWidth) + "px";
+		playerObject.height= (newH) + "px";
+	}
+}
+
+//]]>
+</script>
+
+<a name="youtubegallery"></a>
+<div id="YoutubeGalleryMainContainer6" style="position: relative;display: block;width:600px;">
+<div id="" style="width:600px; "><h3>TIGARBO</h3><div id="YoutubeGallerySecondaryContainer6" style="width:600px;height:400px;"><object  id="youtubegalleryplayerid_6" width="600" height="400" data="https://www.youtube-nocookie.com/v/Mp65fTxoZCw?version=3&amp;autoplay=0&amp;hl=en&amp;fs=0&amp;showinfo=0&amp;iv_load_policy=3&amp;rel=0&amp;loop=0&amp;border=0&amp;controls=1" type="application/x-shockwave-flash" onLoad="YoutubeGalleryAutoResizePlayer6();"><param name="id" value="youtubegalleryplayerid_6" /><param name="movie" value="https://www.youtube-nocookie.com/v/Mp65fTxoZCw?version=3&amp;autoplay=0&amp;hl=en&amp;fs=0&amp;showinfo=0&amp;iv_load_policy=3&amp;rel=0&amp;loop=0&amp;border=0&amp;controls=1" /><param name="wmode" value="transparent" /><param name="allowFullScreen" value="false" /><param name="allowscriptaccess" value="always" /></object></div>
+				
+							
+							<hr  />
+							<table cellspacing="0" style="width:0px;padding:0;border:none;margin:0 auto;">
+		<tbody><tr style="border:none;" >
+				<td style="width:25%;vertical-align:top;text-align:center;border:none;"><a href="javascript:YoutubeGalleryHotVideoSwitch6('Mp65fTxoZCw','youtube',17)"><img src="http://img.youtube.com/vi/Mp65fTxoZCw/0.jpg" style="width:130px;" alt="Cannot Connect to Youtube Server" title="Cannot Connect to Youtube Server" /></a><div id="YoutubeGalleryThumbTitle6_17" style="display:none;visibility:hidden;">Cannot Connect to Youtube Server</div><div id="YoutubeGalleryThumbDescription6_17" style="display:none;visibility:hidden;"></div>
+				</td><td style="border:none;" colspan="3">&nbsp;</td></tr></tbody>
+	   
+    </table>
+	
+	
+						
+				
+			<div style="position:absolute; z-index:20000; top:0px;right:0px;padding:2px;width:136px;height:12px;margin:0;">
+	<a href="http://joomlaboat.com/youtube-gallery#pro-version" style="padding:0px;margin:0;">
+		<img src="http://joomlaboat.com/images/freeversionlogo/pro_joomla_extension_2.png" style="margin:0;padding:0px;border-style:none;" border="0" alt="Youtube Gallery - Free Version" title="Youtube Gallery - Free Version" />
+	</a>
+</div>		
+	</div></div>
+
+<!-- Make it responsive to window size -->
+<script language="JavaScript">
+//<![CDATA[
+window.onresize = function() { YoutubeGalleryAutoResizePlayer6(); } 
+//]]>
+</script>
+
+<!-- end of YouTube Gallery -->
+</p>
+
+
+<div class="item-separator"></div>
+		</div>
+									<span class="row-separator"></span>
+				</div>
+
+				
+
+<div class="clr"></div>
+</div>
+										<div id="vt_inset">
+					                            <div class="widthinset100  floatleft">
+		                     <div class="vt_module_inside">
+                               		<div class="vt_moduletable clearfix moduletable">
+        <div class="vt_box">
+					<h3><span class="vt_heading1"><span class="vt_heading2">Последние новости</span></span></h3>
+					
+	<div class="nspMain nspFs100" id="nsp-nsp_92" style="width:100%;">
+    
+	<div class="nspTopInterface">
+					<div>
+												<ul class="nspPagination">
+														<li>1</li>
+														<li>2</li>
+														<li>3</li>
+													</ul>
+												
+												<span class="nspPrev">Prev</span>
+						<span class="nspNext">Next</span>
+												
+											</div>
+				</div>
+                
+
+		                
+			<div class="nspArts bottom" style="width:100%;">
+												
+														<div class="nspArt" style="width:50%!important;clear:both;"><div style="padding:0 10px 0px 10px"><h4 class="nspHeader tleft fnone"><a href="/stati/item/381-proizvodstvo-novogo-avtobetonosmesitelya-na-polnoprivodnom-shassi.html" title="Производство нового автобетоносмесителя на полноприводном шасси">Производство нового автобетоно&hellip;</a></h4><a href="/stati/item/381-proizvodstvo-novogo-avtobetonosmesitelya-na-polnoprivodnom-shassi.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/k2.items.cache.84c42b9986b8cecdea81ed6abb66c108_Lnsp_92.jpg" alt="Производство нового автобетоносмесителя на полноприводном шасси" style="width:280px;height:160px;"  /></a><p class="nspText tleft fleft">Компания "КОМЗ-Экспорт" продолжает расширять линейку производимых автобетоносмесителей на полноприводных шасси 6х6 с односкатной о...</p><a class="readon  fleft" href="/stati/item/381-proizvodstvo-novogo-avtobetonosmesitelya-na-polnoprivodnom-shassi.html">Подробнее</a></div></div>
+														<div class="nspArt" style="width:50%!important;"><div style="padding:0 10px 0px 10px"><h4 class="nspHeader tleft fnone"><a href="/stati/item/380-rasshiryaem-linejku-avtobetonosmesitelej.html" title="Расширяем линейку автобетоносмесителей">Расширяем линейку автобетоносм&hellip;</a></h4><a href="/stati/item/380-rasshiryaem-linejku-avtobetonosmesitelej.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/k2.items.cache.8b0dca3b357fcee94cf1b8a6c08994ea_Lnsp_92.jpg" alt="Расширяем линейку автобетоносмесителей" style="width:280px;height:160px;"  /></a><p class="nspText tleft fleft">ЗАО "КОМЗ-Экспорт" расширяет производимую линейку автобетоносмесителей на полноприводных шасси.
+Изготовлены и отгружены заказчику...</p><a class="readon  fleft" href="/stati/item/380-rasshiryaem-linejku-avtobetonosmesitelej.html">Подробнее</a></div></div>
+														<div class="nspArt unvisible" style="width:50%!important;clear:both;"><div style="padding:0 10px 0px 10px"><h4 class="nspHeader tleft fnone"><a href="/stati/item/379-rasshiryaem-modelnyj-ryad-avtobetonosmesitelej.html" title="Расширяем модельный ряд автобетоносмесителей">Расширяем модельный ряд автобе&hellip;</a></h4><a href="/stati/item/379-rasshiryaem-modelnyj-ryad-avtobetonosmesitelej.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/k2.items.cache.eb9b7452cdc806568d2312ea5614a301_Lnsp_92.jpg" alt="Расширяем модельный ряд автобетоносмесителей" style="width:280px;height:160px;"  /></a><p class="nspText tleft fleft">Компания "КОМЗ-Экспорт" расширяет модельный ряд автобетоносмесителей малого объема.
+Модель автобетоносмесителя TIGARBO имеет 4х-к...</p><a class="readon  fleft" href="/stati/item/379-rasshiryaem-modelnyj-ryad-avtobetonosmesitelej.html">Подробнее</a></div></div>
+														<div class="nspArt unvisible" style="width:50%!important;"><div style="padding:0 10px 0px 10px"><h4 class="nspHeader tleft fnone"><a href="/stati/item/378-otgruzka-ocherednoj-partii-eletkromobilej-tigarbo.html" title="Отгрузка очередной партии элеткромобилей TIGARBO">Отгрузка очередной партии элет&hellip;</a></h4><a href="/stati/item/378-otgruzka-ocherednoj-partii-eletkromobilej-tigarbo.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/k2.items.cache.24051f1a73d7ccf80aa0e781a6178da9_Lnsp_92.jpg" alt="Отгрузка очередной партии элеткромобилей TIGARBO" style="width:280px;height:160px;"  /></a><p class="nspText tleft fleft">Нашей компанией была произведена очередная отгрузка партии электромобилей для организации-партнера.
+Яркие модели оснащены мягкими...</p><a class="readon  fleft" href="/stati/item/378-otgruzka-ocherednoj-partii-eletkromobilej-tigarbo.html">Подробнее</a></div></div>
+														<div class="nspArt unvisible" style="width:50%!important;clear:both;"><div style="padding:0 10px 0px 10px"><h4 class="nspHeader tleft fnone"><a href="/stati/item/370-vserossijskoe-soveshhanie-po-razvitiyu-elektricheskogo-transporta.html" title="Всероссийское совещание по развитию электрического транспорта">Всероссийское совещание по раз&hellip;</a></h4><a href="/stati/item/370-vserossijskoe-soveshhanie-po-razvitiyu-elektricheskogo-transporta.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/k2.items.cache.4effff5398b13b476604d4d8450bedfd_Lnsp_92.jpg" alt="Всероссийское совещание по развитию электрического транспорта" style="width:280px;height:160px;"  /></a><p class="nspText tleft fleft">12 мая 2022 года компания "КОМЗ-Экспорт" приняла участие в "Всероссийском совещание по развитию электротранспорта и сопутствующей ...</p><a class="readon  fleft" href="/stati/item/370-vserossijskoe-soveshhanie-po-razvitiyu-elektricheskogo-transporta.html">Подробнее</a></div></div>
+														<div class="nspArt unvisible" style="width:50%!important;"><div style="padding:0 10px 0px 10px"><h4 class="nspHeader tleft fnone"><a href="/stati/item/368-pervyj-avtobetonosmesitel-na-metane.html" title="Первый автобетоносмеситель работающий на метане">Первый автобетоносмеситель раб&hellip;</a></h4><a href="/stati/item/368-pervyj-avtobetonosmesitel-na-metane.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/k2.items.cache.3d3b7d5d68132cc424920deb43e754bb_Lnsp_92.jpg" alt="Первый автобетоносмеситель работающий на метане" style="width:280px;height:160px;"  /></a><p class="nspText tleft fleft">ЗАО "КОМЗ-Экспорт" совместно с&nbsp;Заводом "Truck Урал" (предприятие по производству коммунальной, дорожно-строительной, самосвал...</p><a class="readon  fleft" href="/stati/item/368-pervyj-avtobetonosmesitel-na-metane.html">Подробнее</a></div></div>
+					
+			</div>
+					</div>
+
+<script type="text/javascript">
+//<![CDATA[
+try {$Gavick;}catch(e){$Gavick = {};};
+$Gavick["nsp-nsp_92"] = {
+	"animation_speed": 400,
+	"animation_interval": 5000,
+	"animation_function": Fx.Transitions.Expo.easeIn,
+	"news_column": 2,
+	"news_rows": 1,
+	"links_columns_amount": 0,
+	"links_amount": 0,
+	"counter_text": '<strong>Page:</strong>'
+};
+//]]>
+</script>	         </div>   
+		</div>
+	
+			                 </div>
+                         </div>
+                       					   	                   <div class="clr"></div>
+					</div>
+									   </div>
+	             </div>
+	                           <div class="clr"></div>
+	       	</div>	
+	      <div id="vt_bottom" class="clearfix">
+     	<div class="vt_container">
+                 <div class="width100  floatleft">
+		    <div class="vt_module_inside">
+               		<div class="vt_moduletable clearfix moduletable">
+        <div class="vt_box">
+					<h3><span class="vt_heading1"><span class="vt_heading2">Виды продукции</span></span></h3>
+					
+	<div class="nspMain nspFs100" id="nsp-nsp_91" style="width:100%;">
+    
+	<div class="nspTopInterface">
+					<div>
+												<ul class="nspPagination">
+														<li>1</li>
+													</ul>
+												
+												<span class="nspPrev">Prev</span>
+						<span class="nspNext">Next</span>
+												
+											</div>
+				</div>
+                
+
+		                
+			<div class="nspArts bottom" style="width:100%;">
+								
+														<div class="nspArt" style="width:33.333333333333%!important;clear:both;"><div style="padding:0 10px 0px 10px"><a href="/component/k2/item/56-abrazivnaya-produkcziya.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/alum1nsp_91.jpg" alt="Абразивная продукция" style="width:280px;height:160px;"  /></a><h4 class="nspHeader tleft fnone"><a href="/component/k2/item/56-abrazivnaya-produkcziya.html" title="Абразивная продукция">Абразивная продукция</a></h4><p class="nspText tleft fleft">Комплектующие для углошлифовальных машин - отрезные круги
+
+ 
+ 
+ 
+  
+  
+
+
+  
+
+Нет необходимости для человека, занимающег...</p></div></div>
+														<div class="nspArt" style="width:33.333333333333%!important;"><div style="padding:0 10px 0px 10px"><a href="/produktsiya/avtobetonosmesiteli/abs-12-m3.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/k2.items.cache.fc1da7257992fc36032e11db3df7a664_Lnsp_91.jpg" alt="АБС 12 м3" style="width:280px;height:160px;"  /></a><h4 class="nspHeader tleft fnone"><a href="/produktsiya/avtobetonosmesiteli/abs-12-m3.html" title="АБС 12 м3">АБС 12 м3</a></h4><p class="nspText tleft fleft">ТЕХНИЧЕСКИЕ ДАННЫЕ АВТОБЕТОНОСМЕСИТЕЛЯ (АБС)
+Автобетоносмеситель АБС-12ДО на шасси FAW CA3310
+
+
+
+
+
+Габаритная схема
+
+
+
+...</p></div></div>
+														<div class="nspArt" style="width:33.333333333333%!important;"><div style="padding:0 10px 0px 10px"><a href="/produktsiya/avtobetonosmesiteli/abs-11-m3.html" class="nspImageWrapper tleft fleft" style="margin:0px;"><img class="nspImage tleft fleft" src="https://www.tigarbo.ru/modules/mod_news_pro_gk4/cache/k2.items.cache.fd8b0f77d767f1f6640afba6916ff67c_Lnsp_91.jpg" alt="АБС 11 м3" style="width:280px;height:160px;"  /></a><h4 class="nspHeader tleft fnone"><a href="/produktsiya/avtobetonosmesiteli/abs-11-m3.html" title="АБС 11 м3">АБС 11 м3</a></h4><p class="nspText tleft fleft">ТЕХНИЧЕСКИЕ ДАННЫЕ АВТОБЕТОНОСМЕСИТЕЛЯ (АБС)
+&nbsp;
+Автобетоносмеситель 11DA на шасси КамАЗ-65201
+(с приводом от автономного дв...</p></div></div>
+					
+			</div>
+					</div>
+
+<script type="text/javascript">
+//<![CDATA[
+try {$Gavick;}catch(e){$Gavick = {};};
+$Gavick["nsp-nsp_91"] = {
+	"animation_speed": 400,
+	"animation_interval": 5000,
+	"animation_function": Fx.Transitions.Expo.easeIn,
+	"news_column": 3,
+	"news_rows": 1,
+	"links_columns_amount": 0,
+	"links_amount": 0,
+	"counter_text": '<strong>Page:</strong>'
+};
+//]]>
+</script>	         </div>   
+		</div>
+	
+			</div>
+         </div>
+                                    		 		 	     <div class="clr"></div>
+         </div>  
+	 </div>
+   </div>      
+</div>
+</div>   
+</div>
+<div id="vt_wapper_footer">  	 
+        <div id="vt_footer">
+     <div class="vt_container"> 
+                 <div class="width33 separator_footer floatleft">
+		    <div class="vt_module_inside">
+               		<div class="vt_moduletable clearfix moduletable">
+        <div class="vt_box">
+					<h3><span class="vt_heading1"><span class="vt_heading2">Наши партнеры</span></span></h3>
+					
+
+<div class="custom"  >
+	<div class="image_gallery"><a href="http://www.r-status.ru/" target="_blank"><img src="/images/status.jpg" border="0" style="width: 177px!important; height: auto!important;" /></a></div></div>
+         </div>   
+		</div>
+	
+			</div>
+         </div>
+                           <div class="width33 separator_footer floatleft">
+		     <div class="vt_module_inside">
+               		<div class="vt_moduletable clearfix moduletable">
+        <div class="vt_box">
+					<h3><span class="vt_heading1"><span class="vt_heading2">Отзывы</span></span></h3>
+					
+
+<div class="custom"  >
+	<p>Заказал катер, в целом и общем доволен и качеством и обслуживанием.</p>
+<p><em><strong>Александр</strong></em></p></div>
+         </div>   
+		</div>
+	
+			 </div>
+         </div>
+                                    <div class="width33   floatleft">
+		    <div class="vt_module_inside">
+              		<div class="vt_moduletable clearfix moduletable bottom-contacts">
+        <div class="vt_box">
+					<h3><span class="vt_heading1"><span class="vt_heading2">Контакты</span></span></h3>
+					
+
+<div class="custom bottom-contacts"  >
+	<h1 style="text-align: left;"><span style="font-family: arial, helvetica, sans-serif;"><strong><span style="font-size: 10pt;"></span></strong><span style="font-size: 10pt;">ЗАО "КОМЗ-Экспорт"</span></span></h1>
+<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-align: left;">
+<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+<div>Адрес: г.&nbsp;Каменск-Шахтинский, мкр. Заводской,</div>
+<div>ул. Заводская, д.16</div>
+<div>Отдел продаж тел.:</div>
+<div><span style="line-height: 1.8;">+7 (800) 234-96-60</span></div>
+<div><span style="line-height: 1.8;">+7 (863) 656-31-83</span></div>
+<div>Email:&nbsp;<a href="#">dp</a><a href="mailto:<script type='text/javascript'>
+ <!--
+ var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+ var path = 'hr' + 'ef' + '=';
+ var addy54953 = '&#101;l&#101;ctr&#111;d' + '&#64;';
+ addy54953 = addy54953 + 't&#105;g&#97;rb&#111;' + '&#46;' + 'r&#117;';
+ document.write('<a ' + path + '\'' + prefix + ':' + addy54953 + '\'>');
+ document.write(addy54953);
+ document.write('<\/a>');
+ //-->\n </script><script type='text/javascript'>
+ <!--
+ document.write('<span style=\'display: none;\'>');
+ //-->
+ </script>Этот адрес электронной почты защищен от спам-ботов. У вас должен быть включен JavaScript для просмотра.
+ <script type='text/javascript'>
+ <!--
+ document.write('</');
+ document.write('span>');
+ //-->
+ </script>"><span style="font-family: Arial, sans-serif;">@</span><span style="font-family: Arial, sans-serif;">tigarbo</span><span style="font-family: Arial, sans-serif;">.</span><span style="font-family: Arial, sans-serif;">ru</span></a></div>
+<div><span style="font-family: Arial, sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<script type='text/javascript'>
+ <!--
+ var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+ var path = 'hr' + 'ef' + '=';
+ var addy85013 = 'st' + '&#64;';
+ addy85013 = addy85013 + 't&#105;g&#97;rb&#111;' + '&#46;' + 'r&#117;';
+ var addy_text85013 = 'st' + '&#64;' + 't&#105;g&#97;rb&#111;' + '&#46;' + 'r&#117;';
+ document.write('<a ' + path + '\'' + prefix + ':' + addy85013 + '\'>');
+ document.write(addy_text85013);
+ document.write('<\/a>');
+ //-->\n </script><script type='text/javascript'>
+ <!--
+ document.write('<span style=\'display: none;\'>');
+ //-->
+ </script>Этот адрес электронной почты защищен от спам-ботов. У вас должен быть включен JavaScript для просмотра.
+ <script type='text/javascript'>
+ <!--
+ document.write('</');
+ document.write('span>');
+ //-->
+ </script></span></div>
+<div>&nbsp;</div>
+<div><strong><span style="font-size: 10pt;">ООО "ТИГАРБО Трейд"</span></strong></div>
+<div><span style="font-size: 10pt;"></span>(сварочные и абразивные материалы)</div>
+</div>
+</div>
+<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-align: left;">Адрес: г.&nbsp;Каменск-Шахтинский, мкр. Заводской,</div>
+<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-align: left;">ул. Заводская, д.18</div>
+<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-align: left;">Отдел продаж тел.:</div>
+<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-align: left;"><span style="line-height: 1.8;">+7 (863) 218-55-55</span></div>
+<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-align: left;"><span style="line-height: 1.8;">+7 (800) 250-61-01</span></div>
+<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; text-align: left;">Email:&nbsp;<a href="mailto:<script type='text/javascript'>
+ <!--
+ var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+ var path = 'hr' + 'ef' + '=';
+ var addy3196 = '&#101;l&#101;ctr&#111;d' + '&#64;';
+ addy3196 = addy3196 + 't&#105;g&#97;rb&#111;' + '&#46;' + 'r&#117;';
+ document.write('<a ' + path + '\'' + prefix + ':' + addy3196 + '\'>');
+ document.write(addy3196);
+ document.write('<\/a>');
+ //-->\n </script><script type='text/javascript'>
+ <!--
+ document.write('<span style=\'display: none;\'>');
+ //-->
+ </script>Этот адрес электронной почты защищен от спам-ботов. У вас должен быть включен JavaScript для просмотра.
+ <script type='text/javascript'>
+ <!--
+ document.write('</');
+ document.write('span>');
+ //-->
+ </script>"><span style="font-family: Arial, sans-serif;">trade</span><span style="font-family: Arial, sans-serif;">@</span><span style="font-family: Arial, sans-serif;">tigarbo</span><span style="font-family: Arial, sans-serif;">.</span><span style="font-family: Arial, sans-serif;">ru</span></a></div></div>
+         </div>   
+		</div>
+	
+			</div>
+         </div>
+         		 		 	     <div class="clr"></div>
+	 </div>
+    </div>  
+   </div>   
+     <!-- /////////////////// END MAIN LAYOUT ///////////////////////////-->
+   
+   <div id="vt_footer_menu_copyright">
+         <div class="conner_bottom"> &nbsp; </div>  
+          <div class="vt_utility_gotop">
+              <div class="vt_container">
+                            <div id="vt_copyright">
+
+<div class="custom"  >
+	<p>1999 - 2022 © Copyright ЗАО "КОМЗ-Экспорт" <a href="http://tigarbo.ru">www.tigarbo.ru</a></p></div>
+</div>
+                              
+              <div id="gotop"><p>
+              <script type="text/javascript">
+          window.addEvent('domready',function() { new SmoothScroll({ duration: 800 }); })
+        </script>
+              <a href="#vtem" title="Back to Top"><span>Go Top</span></a>
+              </p></div>
+              </div>
+          </div>
+          
+          <div class="vt_container">
+                     <div class="clr"></div>     
+                 </div>
+   </div>
+</div>  
+<script type="text/javascript">
+var Equalizer = new Class({
+initialize: function(elements) {
+this.elements = $$(elements);
+},
+equalize: function(hw) {
+if(!hw) { hw = 'height'; }
+var max = 0,
+prop = (typeof document.body.style.maxHeight != 'undefined' ? 'min-' : '') + hw; //ie6 ftl
+offset = 'offset' + hw.capitalize();
+this.elements.each(function(element,i) {
+var calc = element[offset];
+if(calc > max) { max = calc; }
+},this);
+this.elements.each(function(element,i) {
+element.setStyle(prop,max - (element[offset] - element.getStyle(hw).toInt()));
+});
+return max;
+}
+});
+///////////////////////////////////////////////////////////////
+function fixHeight1 () {
+var equalizer1 = new Equalizer("#vt_header .vt_moduletable").equalize("height");
+}
+window.addEvent ("load", function () {
+fixHeight1.delay (300);
+}); 
+
+function fixHeight2 () {
+var equalizer2 = new Equalizer("#vt_bottom .vt_moduletable").equalize("height");
+}
+window.addEvent ("load", function () {
+fixHeight2.delay (300);
+}); 
+
+function fixHeight3 () {
+var equalizer3 = new Equalizer("#vt_footer .vt_moduletable").equalize("height");
+}
+window.addEvent ("load", function () {
+fixHeight3.delay (300);
+});
+
+</script>
+<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+			<script type="text/javascript">
+			try {
+			var pageTracker = _gat._getTracker("UA-17014902-1");
+			pageTracker._trackPageview();
+			} catch(err) {}</script>
+			</body>
+</html>
