@@ -22,6 +22,9 @@ yarn-error.log*
 # pm2 logs
 /logs
 
+# source svg (originals with long filenames, break Linux clone)
+/svg
+
 # vercel
 .vercel
 
