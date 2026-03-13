@@ -1,21 +1,21 @@
 "use client"
 
 import { createContext, useContext, useState, type ReactNode } from "react"
-import type { Part } from "@/lib/parts-data"
+import type { Product } from "@/lib/parts-data"
 
-export interface CartItem extends Part {
+export interface CartItem extends Product {
   quantity: number
 }
 
 interface CartContextType {
   items: CartItem[]
-  favorites: Part[]
-  addItem: (item: Part) => void
+  favorites: Product[]
+  addItem: (item: Product) => void
   removeItem: (id: number) => void
   updateQuantity: (id: number, quantity: number) => void
   clearCart: () => void
   total: number
-  toggleFavorite: (item: Part) => void
+  toggleFavorite: (item: Product) => void
   isFavorite: (id: number) => boolean
 }
 
@@ -23,9 +23,9 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
-  const [favorites, setFavorites] = useState<Part[]>([])
+  const [favorites, setFavorites] = useState<Product[]>([])
 
-  const addItem = (item: Part) => {
+  const addItem = (item: Product) => {
     setItems((prev) => {
       const existing = prev.find((i) => i.id === item.id)
       if (existing) {
@@ -51,7 +51,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems([])
   }
 
-  const toggleFavorite = (item: Part) => {
+  const toggleFavorite = (item: Product) => {
     setFavorites((prev) => {
       const exists = prev.find((f) => f.id === item.id)
       if (exists) {
@@ -66,8 +66,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }
 
   const total = items.reduce((sum, item) => {
-    const price = Number.parseFloat(item.price.replace(/[^\d,]/g, "").replace(",", "."))
-    return sum + price * item.quantity
+    return sum + item.quantity
   }, 0)
 
   return (

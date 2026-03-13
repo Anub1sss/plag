@@ -1,6 +1,19 @@
 import { NextResponse } from "next/server"
 
-const ZHIPU_API_URL = "https://api.z.ai/api/paas/v4/chat/completions"
+const ZHIPU_API_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
+
+const MAX_MESSAGES = 50
+const MAX_MESSAGE_LENGTH = 4000
+const VALID_ROLES = new Set(["user", "assistant"])
+
+function sanitizeContent(str: string): string {
+  return str
+    .replace(/<[^>]*>/g, "")
+    // eslint-disable-next-line no-control-regex
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, "")
+    .trim()
+    .slice(0, MAX_MESSAGE_LENGTH)
+}
 
 export async function POST(req: Request) {
   try {
@@ -12,7 +25,14 @@ export async function POST(req: Request) {
       )
     }
 
-    const { messages } = (await req.json()) as { messages: { role: string; content: string }[] }
+    let parsed: unknown
+    try {
+      parsed = await req.json()
+    } catch {
+      return NextResponse.json({ error: "Некорректный JSON" }, { status: 400 })
+    }
+
+    const { messages } = parsed as { messages: unknown }
     if (!Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json(
         { error: "Нужен массив messages" },
@@ -20,13 +40,28 @@ export async function POST(req: Request) {
       )
     }
 
-    // Формат как в примере: только user/assistant, без system
+    const sanitizedMessages = messages
+      .slice(-MAX_MESSAGES)
+      .filter(
+        (m: unknown): m is { role: string; content: string } =>
+          typeof m === "object" &&
+          m !== null &&
+          typeof (m as Record<string, unknown>).role === "string" &&
+          typeof (m as Record<string, unknown>).content === "string" &&
+          VALID_ROLES.has((m as Record<string, unknown>).role as string)
+      )
+      .map((m) => ({
+        role: m.role as "user" | "assistant",
+        content: sanitizeContent(m.content),
+      }))
+
+    if (sanitizedMessages.length === 0) {
+      return NextResponse.json({ error: "Нет валидных сообщений" }, { status: 400 })
+    }
+
     const body = {
       model: "glm-4.7-flash",
-      messages: messages.map((m) => ({
-        role: m.role as "user" | "assistant",
-        content: m.content,
-      })),
+      messages: sanitizedMessages,
       max_tokens: 4096,
       temperature: 0.7,
     }

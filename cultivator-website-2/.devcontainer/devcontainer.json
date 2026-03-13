@@ -1,0 +1,21 @@
+{
+  "name": "Kultivator Web",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Kultivator Web",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  },
+  "postCreateCommand": "npm ci && npm install -g pm2",
+  "postStartCommand": "bash start-prod.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}

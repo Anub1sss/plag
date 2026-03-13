@@ -1,21 +1,39 @@
 "use client"
 
-import { ArrowLeft, Heart, ShoppingCart, Package, Shield, Truck, Check, X } from "lucide-react"
+import { useRef, useCallback } from "react"
+import { ArrowLeft, Heart, ShoppingCart, Package, Shield, Truck, Check, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useCart } from "@/components/cart-provider"
-import type { Part } from "@/lib/parts-data"
-import { getProductImage, getFallbackImage } from "@/lib/image-utils"
+import { useAuth } from "@/lib/auth-context"
+import type { Product } from "@/lib/parts-data"
+import { getProductImage, getProductImages, getFallbackImage } from "@/lib/image-utils"
+import { CallbackModal } from "@/components/callback-modal"
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 
 interface ProductDetailClientProps {
-  product: Part
+  product: Product
 }
 
 export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const { addItem, toggleFavorite, isFavorite } = useCart()
+  const { getProductPrice } = useAuth()
   const [quantity, setQuantity] = useState(1)
+  const [selectedImage, setSelectedImage] = useState(0)
+  const [callbackOpen, setCallbackOpen] = useState(false)
+  const images = getProductImages(product)
+  const displayPrice = getProductPrice(product.id, product.price)
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return
+    const rect = cardRef.current.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    cardRef.current.style.setProperty("--mouse-x", `${x}%`)
+    cardRef.current.style.setProperty("--mouse-y", `${y}%`)
+  }, [])
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {
@@ -24,83 +42,129 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background pb-24">
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-border/50 bg-background/95 backdrop-blur-sm">
+    <div className="min-h-screen bg-background grain-overlay pb-24">
+      <header className="sticky top-0 z-40 glass-strong border-b border-white/[0.06]">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4">
           <Link
             href="/"
-            className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+            className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground group"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
             <span>Назад</span>
           </Link>
         </div>
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-8">
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* Product Image */}
-          <div className="relative aspect-square overflow-hidden rounded-2xl border border-border/50 bg-card">
-            <Image
-              src={getProductImage(product)}
-              alt={product.name}
-              fill
-              className="object-contain p-8"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement
-                target.src = getFallbackImage()
-              }}
-            />
-            {/* Favorite button */}
-            <button
-              onClick={() => toggleFavorite(product)}
-              className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-background/90 shadow-lg backdrop-blur-sm transition-all hover:scale-110"
-            >
-              <Heart
-                className={`h-6 w-6 transition-colors ${isFavorite(product.id) ? "fill-red-500 text-red-500" : "text-foreground/60"}`}
-              />
-            </button>
-            {/* Stock badge */}
+        <div className="grid gap-10 lg:grid-cols-2">
+          {/* Image area */}
+          <div>
             <div
-              className={`absolute left-4 top-4 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium ${product.inStock !== false ? "bg-emerald-500/20 text-emerald-400" : "bg-red-500/20 text-red-400"}`}
+              ref={cardRef}
+              onMouseMove={handleMouseMove}
+              className="glow-card relative aspect-square overflow-hidden rounded-3xl border border-border/30 bg-card/50 backdrop-blur-sm"
             >
-              {product.inStock !== false ? (
-                <>
-                  <Check className="h-4 w-4" />В наличии
-                </>
-              ) : (
-                <>
-                  <X className="h-4 w-4" />
-                  Под заказ
-                </>
-              )}
+              <Image
+                src={images[selectedImage] || getProductImage(product)}
+                alt={product.name}
+                fill
+                className="object-contain p-8 transition-all duration-500 hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.src = getFallbackImage()
+                }}
+              />
+              <button
+                onClick={() => toggleFavorite(product)}
+                className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-background/40 backdrop-blur-md shadow-lg transition-all hover:scale-110 hover:bg-background/60"
+              >
+                <Heart
+                  className={`h-6 w-6 transition-all ${isFavorite(product.id) ? "fill-red-500 text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" : "text-foreground/60"}`}
+                />
+              </button>
+              <div
+                className={`absolute left-4 top-4 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium backdrop-blur-md ${product.inStock ? "bg-emerald-500/15 text-emerald-400" : "bg-amber-500/15 text-amber-400"}`}
+              >
+                {product.inStock ? (
+                  <><Check className="h-4 w-4" />В наличии</>
+                ) : (
+                  <><X className="h-4 w-4" />Под заказ</>
+                )}
+              </div>
             </div>
+
+            {images.length > 1 && (
+              <div className="mt-4 flex gap-2 overflow-x-auto pb-2">
+                {images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedImage(idx)}
+                    className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl border-2 bg-card/50 backdrop-blur-sm transition-all ${
+                      selectedImage === idx
+                        ? "border-primary shadow-[0_0_15px_oklch(0.62_0.19_150/0.2)]"
+                        : "border-border/30 hover:border-border"
+                    }`}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${product.name} ${idx + 1}`}
+                      fill
+                      className="object-contain p-2"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.src = getFallbackImage()
+                      }}
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
-          {/* Product Info */}
+          {/* Info area */}
           <div className="flex flex-col">
-            {/* Article & Part Number */}
-            <div className="mb-4 flex flex-wrap gap-3">
+            <div className="mb-4 flex flex-wrap gap-2">
               <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                {product.article}
+                {product.categoryName}
               </span>
-              <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
-                {product.partNumber}
-              </span>
+              {product.subcategory && (
+                <span className="rounded-full border border-border/30 bg-card/50 px-3 py-1 text-sm font-medium text-muted-foreground backdrop-blur-sm">
+                  {product.subcategory}
+                </span>
+              )}
             </div>
 
-            {/* Name */}
-            <h1 className="mb-6 text-2xl font-bold leading-tight text-foreground sm:text-3xl">{product.name}</h1>
+            <h1 className="mb-6 text-2xl font-bold leading-tight text-foreground sm:text-3xl animate-slide-up">
+              {product.name}
+            </h1>
 
-            {/* Price */}
-            <div className="mb-6">
-              <span className="text-4xl font-bold text-foreground">{product.price} ₽</span>
+            {displayPrice && (
+              <div className="mb-6 rounded-2xl border border-amber-500/20 bg-amber-500/[0.04] p-5 backdrop-blur-sm">
+                <span className="text-3xl font-bold text-foreground">
+                  ~ {displayPrice.toLocaleString("ru-RU")} ₽
+                </span>
+                <p className="mt-1 text-sm text-amber-600 dark:text-amber-400/80">
+                  Примерная цена. Уточняйте актуальную стоимость у менеджера.
+                </p>
+              </div>
+            )}
+
+            <div className="mb-5">
+              <Button
+                onClick={() => setCallbackOpen(true)}
+                size="lg"
+                className="w-full h-12 gap-2 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all sm:w-auto sm:px-8 btn-glow"
+              >
+                <Phone className="h-5 w-5" />
+                Узнать актуальную цену
+              </Button>
+              <p className="mt-2 text-xs text-muted-foreground/70">
+                Менеджер свяжется с вами и уточнит стоимость и наличие
+              </p>
             </div>
 
-            {/* Quantity & Add to cart */}
             <div className="mb-8 flex flex-wrap items-center gap-4">
-              <div className="flex items-center rounded-xl border border-border bg-card">
+              <div className="flex items-center rounded-xl border border-border/30 bg-card/50 backdrop-blur-sm">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="flex h-12 w-12 items-center justify-center text-xl font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -118,95 +182,65 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
               <Button
                 onClick={handleAddToCart}
                 size="lg"
-                className="h-12 flex-1 gap-2 bg-primary text-primary-foreground hover:bg-primary/90 sm:flex-none sm:px-8"
+                variant="outline"
+                className="h-12 flex-1 gap-2 rounded-xl border-border/30 bg-transparent backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-primary/5 sm:flex-none sm:px-8"
               >
                 <ShoppingCart className="h-5 w-5" />
-                Добавить в корзину
+                В корзину
               </Button>
             </div>
 
-            {/* Features */}
-            <div className="mb-8 grid grid-cols-3 gap-4">
-              <div className="flex flex-col items-center gap-2 rounded-xl border border-border/50 bg-card p-4 text-center">
-                <Truck className="h-6 w-6 text-primary" />
-                <span className="text-xs text-muted-foreground">Доставка по РФ</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 rounded-xl border border-border/50 bg-card p-4 text-center">
-                <Shield className="h-6 w-6 text-primary" />
-                <span className="text-xs text-muted-foreground">{product.warranty || "12 месяцев"}</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 rounded-xl border border-border/50 bg-card p-4 text-center">
-                <Package className="h-6 w-6 text-primary" />
-                <span className="text-xs text-muted-foreground">Оригинал</span>
-              </div>
+            {/* Feature badges */}
+            <div className="mb-8 grid grid-cols-3 gap-3">
+              {[
+                { icon: Truck, label: "Доставка по РФ" },
+                { icon: Shield, label: "Гарантия качества" },
+                { icon: Package, label: "Оригинал" },
+              ].map((feature) => (
+                <div
+                  key={feature.label}
+                  className="glow-card flex flex-col items-center gap-2.5 rounded-2xl border border-border/20 bg-card/30 p-4 text-center backdrop-blur-sm"
+                >
+                  <feature.icon className="h-6 w-6 text-primary" />
+                  <span className="text-xs text-muted-foreground">{feature.label}</span>
+                </div>
+              ))}
             </div>
 
-            {/* Description */}
-            {product.description && (
-              <div className="mb-8">
-                <h2 className="mb-3 text-lg font-semibold text-foreground">Описание</h2>
-                <p className="leading-relaxed text-muted-foreground">{product.description}</p>
-              </div>
-            )}
-
-            {/* Specifications */}
-            <div className="rounded-2xl border border-border/50 bg-card p-6">
-              <h2 className="mb-4 text-lg font-semibold text-foreground">Характеристики</h2>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between border-b border-border/30 pb-3">
-                  <span className="text-muted-foreground">Артикул</span>
-                  <span className="font-medium text-foreground">{product.article}</span>
-                </div>
-                <div className="flex items-center justify-between border-b border-border/30 pb-3">
-                  <span className="text-muted-foreground">Номер детали</span>
-                  <span className="font-medium text-foreground">{product.partNumber}</span>
-                </div>
-                {product.weight && (
-                  <div className="flex items-center justify-between border-b border-border/30 pb-3">
-                    <span className="text-muted-foreground">Вес</span>
-                    <span className="font-medium text-foreground">{product.weight}</span>
-                  </div>
-                )}
-                {product.material && (
-                  <div className="flex items-center justify-between border-b border-border/30 pb-3">
-                    <span className="text-muted-foreground">Материал</span>
-                    <span className="font-medium text-foreground">{product.material}</span>
-                  </div>
-                )}
-                {product.manufacturer && (
-                  <div className="flex items-center justify-between border-b border-border/30 pb-3">
-                    <span className="text-muted-foreground">Производитель</span>
-                    <span className="font-medium text-foreground">{product.manufacturer}</span>
-                  </div>
-                )}
-                {product.warranty && (
-                  <div className="flex items-center justify-between pb-1">
-                    <span className="text-muted-foreground">Гарантия</span>
-                    <span className="font-medium text-foreground">{product.warranty}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Compatible with */}
-            {product.compatibleWith && product.compatibleWith.length > 0 && (
-              <div className="mt-6 rounded-2xl border border-border/50 bg-card p-6">
-                <h2 className="mb-4 text-lg font-semibold text-foreground">Совместимость</h2>
-                <div className="flex flex-wrap gap-2">
-                  {product.compatibleWith.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary"
+            {/* Specs table */}
+            <div className="rounded-2xl border border-border/20 bg-card/30 p-6 backdrop-blur-sm">
+              <h2 className="mb-5 text-lg font-semibold text-foreground">Информация</h2>
+              <div className="space-y-0">
+                {[
+                  { label: "Категория", value: product.categoryName },
+                  product.subcategory ? { label: "Подкатегория", value: product.subcategory } : null,
+                  product.article ? { label: "Артикул", value: product.article } : null,
+                  product.bizonCode ? { label: "Код", value: product.bizonCode } : null,
+                  {
+                    label: "Наличие",
+                    value: product.inStock ? "В наличии" : "Под заказ",
+                    color: product.inStock ? "text-emerald-500" : "text-amber-500",
+                  },
+                  { label: "Фото", value: `${images.length} шт.` },
+                ]
+                  .filter(Boolean)
+                  .map((row, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-between border-b border-border/10 py-3.5 last:border-0"
                     >
-                      {item}
-                    </span>
+                      <span className="text-sm text-muted-foreground">{row!.label}</span>
+                      <span className={`text-sm font-medium ${(row as any)?.color || "text-foreground"}`}>
+                        {row!.value}
+                      </span>
+                    </div>
                   ))}
-                </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </main>
+      <CallbackModal open={callbackOpen} onClose={() => setCallbackOpen(false)} />
     </div>
   )
 }

@@ -21,7 +21,7 @@ export function BottomNav({ activeTab, onTabChange, onCartOpen, onFavoritesOpen 
     { id: "home", icon: Home, label: "Главная", action: () => onTabChange("home") },
     { id: "catalog", icon: Grid2X2, label: "Каталог", action: () => router.push("/catalog") },
     { id: "cart", icon: ShoppingCart, label: "Корзина", badge: totalItems, action: onCartOpen },
-    { id: "favorites", icon: Heart, label: "Избранное", badge: favorites.length, action: onFavoritesOpen },
+    { id: "favorites", icon: Heart, label: "Избранное", badge: favorites.length, action: () => router.push("/favorites") },
     { id: "profile", icon: User, label: "Профиль", action: () => router.push("/profile") },
   ]
 

@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
 import type { CartItem } from "@/components/cart-provider"
+import { sanitizeText, sanitizeEmail, sanitizePhone, sanitizePrice, safeJsonParse, sanitizePassword } from "@/lib/sanitize"
 
 export interface User {
   firstName: string
@@ -42,12 +43,34 @@ export interface PaymentMethod {
   isDefault: boolean
 }
 
+export interface CallbackRequest {
+  id: string
+  name: string
+  phone: string
+  message?: string
+  date: string
+  status: "new" | "processing" | "done"
+}
+
+export interface ServicePayment {
+  id: string
+  name: string
+  cost: number
+  nextPaymentDate: string
+  status: "paid" | "expiring" | "overdue"
+  description?: string
+}
+
 interface AuthContextType {
   user: User | null
   isAuthenticated: boolean
   orders: Order[]
   notifications: Notification[]
   paymentMethods: PaymentMethod[]
+  callbackRequests: CallbackRequest[]
+  priceOverrides: Record<number, number>
+  siteVisits: number
+  servicePayments: ServicePayment[]
   login: (email: string, password: string) => boolean
   register: (data: { email: string; password: string; firstName: string; lastName: string; phone: string }) => boolean
   logout: () => void
@@ -57,6 +80,13 @@ interface AuthContextType {
   markNotificationRead: (id: string) => void
   addPaymentMethod: (method: Omit<PaymentMethod, "id">) => void
   removePaymentMethod: (id: string) => void
+  submitCallback: (name: string, phone: string, message?: string) => void
+  updateCallbackStatus: (id: string, status: CallbackRequest["status"]) => void
+  updateProductPrice: (productId: number, price: number | null) => void
+  getProductPrice: (productId: number, basePrice?: number) => number | undefined
+  addServicePayment: (sp: Omit<ServicePayment, "id">) => void
+  updateServicePayment: (id: string, data: Partial<ServicePayment>) => void
+  removeServicePayment: (id: string) => void
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -71,8 +101,12 @@ function getUsersDB(): Map<string, User> {
   const stored = localStorage.getItem(USERS_DB_KEY)
   const map = new Map<string, User>()
   if (stored) {
-    const users = JSON.parse(stored) as User[]
-    users.forEach((u) => map.set(u.email, u))
+    const users = safeJsonParse<User[]>(stored, [])
+    if (Array.isArray(users)) {
+      users.forEach((u) => {
+        if (u && typeof u.email === "string") map.set(u.email, u)
+      })
+    }
   } else {
     // Инициализация с админом
     const admin: User = {
@@ -101,47 +135,48 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [orders, setOrders] = useState<Order[]>([])
   const [notifications, setNotifications] = useState<Notification[]>([])
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>([])
+  const [callbackRequests, setCallbackRequests] = useState<CallbackRequest[]>([])
+  const [priceOverrides, setPriceOverrides] = useState<Record<number, number>>({})
+  const [siteVisits, setSiteVisits] = useState(0)
+  const [servicePayments, setServicePayments] = useState<ServicePayment[]>([])
 
-  // Загрузка из localStorage при монтировании
   useEffect(() => {
     if (typeof window === "undefined") return
-    const savedUser = localStorage.getItem("user")
-    const savedOrders = localStorage.getItem("orders")
-    const savedNotifications = localStorage.getItem("notifications")
-    const savedPaymentMethods = localStorage.getItem("paymentMethods")
-    
-    if (savedUser) {
-      setUser(JSON.parse(savedUser))
+
+    const savedUser = safeJsonParse<User | null>(localStorage.getItem("user"), null)
+    if (savedUser && typeof savedUser.email === "string") {
+      setUser(savedUser)
     }
-    if (savedOrders) {
-      setOrders(JSON.parse(savedOrders))
+
+    const savedOrders = safeJsonParse<Order[]>(localStorage.getItem("orders"), [])
+    if (Array.isArray(savedOrders)) setOrders(savedOrders)
+
+    const savedNotifications = safeJsonParse<Notification[]>(localStorage.getItem("notifications"), [])
+    if (Array.isArray(savedNotifications)) setNotifications(savedNotifications)
+
+    const savedPaymentMethods = safeJsonParse<PaymentMethod[]>(localStorage.getItem("paymentMethods"), [])
+    if (Array.isArray(savedPaymentMethods)) setPaymentMethods(savedPaymentMethods)
+
+    const savedCallbacks = safeJsonParse<CallbackRequest[]>(localStorage.getItem("callbackRequests"), [])
+    if (Array.isArray(savedCallbacks)) setCallbackRequests(savedCallbacks)
+
+    const savedPriceOverrides = safeJsonParse<Record<number, number>>(localStorage.getItem("priceOverrides"), {})
+    if (savedPriceOverrides && typeof savedPriceOverrides === "object" && !Array.isArray(savedPriceOverrides)) {
+      setPriceOverrides(savedPriceOverrides)
     }
-    if (savedNotifications) {
-      setNotifications(JSON.parse(savedNotifications))
-    } else {
-      // Инициализация уведомлений
-      const initialNotifications: Notification[] = [
-        {
-          id: "1",
-          title: "Новый заказ",
-          message: "Ваш заказ #ORD-123456 оформлен",
-          date: new Date().toISOString(),
-          read: false,
-          type: "order",
-        },
-        {
-          id: "2",
-          title: "Акция",
-          message: "Скидка 15% на все запчасти для культиваторов",
-          date: new Date(Date.now() - 86400000).toISOString(),
-          read: false,
-          type: "promotion",
-        },
-      ]
-      setNotifications(initialNotifications)
-    }
-    if (savedPaymentMethods) {
-      setPaymentMethods(JSON.parse(savedPaymentMethods))
+
+    const savedVisits = safeJsonParse<number>(localStorage.getItem("siteVisits"), 0)
+    if (typeof savedVisits === "number") setSiteVisits(savedVisits)
+
+    const savedServicePayments = safeJsonParse<ServicePayment[]>(localStorage.getItem("servicePayments"), [])
+    if (Array.isArray(savedServicePayments)) setServicePayments(savedServicePayments)
+
+    if (!sessionStorage.getItem("visited")) {
+      sessionStorage.setItem("visited", "1")
+      const cur = safeJsonParse<number>(localStorage.getItem("siteVisits"), 0)
+      const next = (typeof cur === "number" ? cur : 0) + 1
+      localStorage.setItem("siteVisits", JSON.stringify(next))
+      setSiteVisits(next)
     }
   }, [])
 
@@ -171,12 +206,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("paymentMethods", JSON.stringify(paymentMethods))
   }, [paymentMethods])
 
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    localStorage.setItem("callbackRequests", JSON.stringify(callbackRequests))
+  }, [callbackRequests])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    localStorage.setItem("priceOverrides", JSON.stringify(priceOverrides))
+  }, [priceOverrides])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    localStorage.setItem("servicePayments", JSON.stringify(servicePayments))
+  }, [servicePayments])
+
   const login = (email: string, password: string): boolean => {
     if (typeof window === "undefined") return false
+    const cleanEmail = sanitizeEmail(email)
+    const cleanPassword = sanitizePassword(password)
+    if (!cleanEmail) return false
+
     const usersDB = getUsersDB()
-    const foundUser = usersDB.get(email)
+    const foundUser = usersDB.get(cleanEmail)
     
-    if (foundUser && foundUser.password === password) {
+    if (foundUser && foundUser.password === cleanPassword) {
       const { password: _, ...userWithoutPassword } = foundUser
       setUser(userWithoutPassword as User)
       return true
@@ -192,21 +246,32 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     phone: string
   }): boolean => {
     if (typeof window === "undefined") return false
+
+    const cleanEmail = sanitizeEmail(data.email)
+    if (!cleanEmail) return false
+
+    const cleanData = {
+      email: cleanEmail,
+      password: sanitizePassword(data.password),
+      firstName: sanitizeText(data.firstName, 100),
+      lastName: sanitizeText(data.lastName, 100),
+      phone: sanitizePhone(data.phone),
+    }
+
     const usersDB = getUsersDB()
-    
-    if (usersDB.has(data.email)) {
-      return false // Пользователь уже существует
+    if (usersDB.has(cleanData.email)) {
+      return false
     }
 
     const newUser: User = {
-      ...data,
+      ...cleanData,
       address: "",
       isLegalEntity: false,
-      password: data.password,
+      password: cleanData.password,
       isAdmin: false,
     }
     
-    usersDB.set(data.email, newUser)
+    usersDB.set(cleanData.email, newUser)
     saveUsersDB(usersDB)
     
     const { password: _, ...userWithoutPassword } = newUser
@@ -220,23 +285,41 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const updateUser = (data: Partial<User>) => {
     if (user) {
-      setUser({ ...user, ...data })
+      const sanitized: Partial<User> = {}
+      if (data.firstName !== undefined) sanitized.firstName = sanitizeText(data.firstName, 100)
+      if (data.lastName !== undefined) sanitized.lastName = sanitizeText(data.lastName, 100)
+      if (data.phone !== undefined) sanitized.phone = sanitizePhone(data.phone)
+      if (data.address !== undefined) sanitized.address = sanitizeText(data.address, 300)
+      if (data.companyName !== undefined) sanitized.companyName = sanitizeText(data.companyName, 200)
+      if (data.inn !== undefined) sanitized.inn = sanitizeText(data.inn, 20)
+      if (data.isLegalEntity !== undefined) sanitized.isLegalEntity = !!data.isLegalEntity
+      if (data.email !== undefined) {
+        const e = sanitizeEmail(data.email)
+        if (e) sanitized.email = e
+      }
+      setUser({ ...user, ...sanitized })
     }
   }
 
   const subscribe = (email: string) => {
-    // В реальном приложении - отправка на сервер
-    console.log("Подписка на рассылку:", email)
+    const cleanEmail = sanitizeEmail(email)
+    if (!cleanEmail) return
+    console.log("Подписка на рассылку:", cleanEmail)
   }
 
   const createOrder = (items: CartItem[], total: number, email: string): Order => {
+    const cleanEmail = sanitizeEmail(email) || email.trim().slice(0, 254)
+    const safeTotal = sanitizePrice(total) ?? 0
     const newOrder: Order = {
       id: `ORD-${Date.now()}`,
       date: new Date().toISOString(),
-      items: [...items],
-      total,
+      items: items.map((item) => ({
+        ...item,
+        name: sanitizeText(item.name, 300),
+      })),
+      total: safeTotal,
       status: "pending",
-      email,
+      email: cleanEmail,
     }
     setOrders((prev) => [newOrder, ...prev])
     
@@ -275,6 +358,69 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setPaymentMethods((prev) => prev.filter((m) => m.id !== id))
   }
 
+  const updateProductPrice = (productId: number, price: number | null) => {
+    if (!Number.isFinite(productId) || productId < 0) return
+    const safePrice = price === null ? null : sanitizePrice(price)
+    setPriceOverrides((prev) => {
+      const next = { ...prev }
+      if (safePrice === null) {
+        delete next[productId]
+      } else {
+        next[productId] = safePrice
+      }
+      return next
+    })
+  }
+
+  const getProductPrice = (productId: number, basePrice?: number): number | undefined => {
+    if (productId in priceOverrides) return priceOverrides[productId]
+    return basePrice
+  }
+
+  const submitCallback = (name: string, phone: string, message?: string) => {
+    const cleanName = sanitizeText(name, 200)
+    const cleanPhone = sanitizePhone(phone)
+    if (!cleanName || !cleanPhone) return
+
+    const req: CallbackRequest = {
+      id: `cb-${Date.now()}`,
+      name: cleanName,
+      phone: cleanPhone,
+      message: message ? sanitizeText(message, 1000) : undefined,
+      date: new Date().toISOString(),
+      status: "new",
+    }
+    setCallbackRequests((prev) => [req, ...prev])
+  }
+
+  const updateCallbackStatus = (id: string, status: CallbackRequest["status"]) => {
+    const validStatuses: CallbackRequest["status"][] = ["new", "processing", "done"]
+    if (!validStatuses.includes(status)) return
+    const cleanId = sanitizeText(id, 50)
+    setCallbackRequests((prev) => prev.map((r) => (r.id === cleanId ? { ...r, status } : r)))
+  }
+
+  const addServicePayment = (sp: Omit<ServicePayment, "id">) => {
+    const newSp: ServicePayment = {
+      ...sp,
+      id: `sp-${Date.now()}`,
+      name: sanitizeText(sp.name, 200),
+      cost: sanitizePrice(sp.cost) ?? 0,
+      description: sp.description ? sanitizeText(sp.description, 500) : undefined,
+    }
+    setServicePayments((prev) => [...prev, newSp])
+  }
+
+  const updateServicePayment = (id: string, data: Partial<ServicePayment>) => {
+    setServicePayments((prev) =>
+      prev.map((sp) => (sp.id === id ? { ...sp, ...data } : sp))
+    )
+  }
+
+  const removeServicePayment = (id: string) => {
+    setServicePayments((prev) => prev.filter((sp) => sp.id !== id))
+  }
+
   return (
     <AuthContext.Provider
       value={{
@@ -283,6 +429,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         orders,
         notifications,
         paymentMethods,
+        callbackRequests,
+        priceOverrides,
+        siteVisits,
+        servicePayments,
         login,
         register,
         logout,
@@ -292,6 +442,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         markNotificationRead,
         addPaymentMethod,
         removePaymentMethod,
+        submitCallback,
+        updateCallbackStatus,
+        updateProductPrice,
+        getProductPrice,
+        addServicePayment,
+        updateServicePayment,
+        removeServicePayment,
       }}
     >
       {children}

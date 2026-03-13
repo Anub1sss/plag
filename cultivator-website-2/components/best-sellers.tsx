@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ProductCard } from "@/components/product-card"
 import { bestSellers } from "@/lib/parts-data"
@@ -28,7 +28,6 @@ export function BestSellers() {
     }
   }, [])
 
-  // Auto scroll
   useEffect(() => {
     const interval = setInterval(() => {
       if (scrollRef.current && !document.querySelector(".best-sellers:hover")) {
@@ -46,23 +45,33 @@ export function BestSellers() {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -300 : 300
+      const scrollAmount = direction === "left" ? -320 : 320
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" })
     }
   }
 
+  if (bestSellers.length === 0) return null
+
   return (
-    <section className="best-sellers py-12">
+    <section className="best-sellers relative py-16">
       <div className="container mx-auto px-4">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-foreground">Хиты продаж</h2>
+        <div className="mb-10 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+              <Sparkles className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-foreground">Популярные товары</h2>
+              <p className="text-sm text-muted-foreground">Самые востребованные позиции</p>
+            </div>
+          </div>
           <div className="flex gap-2">
             <Button
               variant="outline"
               size="icon"
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10 rounded-full border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:bg-primary/10 hover:border-primary/30 disabled:opacity-30"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
@@ -71,7 +80,7 @@ export function BestSellers() {
               size="icon"
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10 rounded-full border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:bg-primary/10 hover:border-primary/30 disabled:opacity-30"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
@@ -80,7 +89,7 @@ export function BestSellers() {
 
         <div
           ref={scrollRef}
-          className="scrollbar-hide flex gap-4 overflow-x-auto pb-4"
+          className="flex gap-5 overflow-x-auto pb-4"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {bestSellers.map((product) => (
@@ -89,6 +98,14 @@ export function BestSellers() {
             </div>
           ))}
         </div>
+
+        {/* Fade edges */}
+        {canScrollLeft && (
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent" />
+        )}
+        {canScrollRight && (
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent" />
+        )}
       </div>
     </section>
   )

@@ -46,6 +46,7 @@ export function ProfileModal({ open, onClose }: ProfileModalProps) {
     markNotificationRead,
     addPaymentMethod,
     removePaymentMethod,
+    subscribe,
   } = useAuth()
 
   const [activeSection, setActiveSection] = useState<string | null>(null)
@@ -65,6 +66,8 @@ export function ProfileModal({ open, onClose }: ProfileModalProps) {
   const [newCardName, setNewCardName] = useState("")
   const [currentPassword, setCurrentPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
+  const [subscribeEmail, setSubscribeEmail] = useState("")
+  const [subscribed, setSubscribed] = useState(false)
 
   if (!open) return null
 
@@ -470,6 +473,46 @@ export function ProfileModal({ open, onClose }: ProfileModalProps) {
                       </div>
                       <input type="checkbox" className="h-5 w-5" />
                     </div>
+                  </div>
+
+                  <div className="rounded-lg border border-border p-4 space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Mail className="h-5 w-5 text-primary" />
+                      <h4 className="font-medium">Подписка на рассылку</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Получайте новости о скидках, новых поступлениях и акциях на вашу почту
+                    </p>
+                    {subscribed ? (
+                      <div className="flex items-center gap-2 rounded-lg bg-green-500/10 p-3 text-sm text-green-600 dark:text-green-400">
+                        <CheckCircle2 className="h-5 w-5 shrink-0" />
+                        <span>Вы подписаны на рассылку!</span>
+                      </div>
+                    ) : (
+                      <div className="flex gap-2">
+                        <Input
+                          type="email"
+                          placeholder="Введите ваш email"
+                          value={subscribeEmail}
+                          onChange={(e) => setSubscribeEmail(e.target.value)}
+                          className="flex-1"
+                        />
+                        <Button
+                          onClick={() => {
+                            if (subscribeEmail.trim() && subscribeEmail.includes("@")) {
+                              subscribe(subscribeEmail.trim())
+                              setSubscribed(true)
+                              setSubscribeEmail("")
+                            }
+                          }}
+                          disabled={!subscribeEmail.trim() || !subscribeEmail.includes("@")}
+                          size="sm"
+                          className="shrink-0"
+                        >
+                          Подписаться
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

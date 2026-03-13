@@ -63,35 +63,35 @@ export function AIChatbot() {
 
   return (
     <>
-      {/* Chat button - positioned above bottom nav */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg transition-transform hover:scale-110"
+        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-[0_0_30px_oklch(0.62_0.19_150/0.3)] transition-all hover:scale-110 hover:shadow-[0_0_40px_oklch(0.62_0.19_150/0.5)]"
       >
         <MessageCircle className="h-6 w-6 text-primary-foreground" />
       </button>
 
-      {/* Chat window */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-4 backdrop-blur-sm sm:items-center">
-          <div className="flex h-[500px] w-full max-w-md flex-col overflow-hidden rounded-2xl bg-card shadow-2xl">
-            {/* Header */}
-            <div className="flex items-center justify-between border-b border-border bg-primary p-4">
+        <div className="fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center">
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-md" onClick={() => setIsOpen(false)} />
+          <div className="relative flex h-[500px] w-full max-w-md flex-col overflow-hidden rounded-3xl glass-strong shadow-2xl shadow-black/30 animate-slide-up">
+            <div className="flex items-center justify-between border-b border-white/[0.06] bg-primary/90 p-4 backdrop-blur-md">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-foreground/20">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
                   <Bot className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary-foreground">AI Ассистент</h3>
-                  <p className="text-xs text-primary-foreground/70">Онлайн</p>
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.6)]" />
+                    <p className="text-xs text-primary-foreground/70">Онлайн</p>
+                  </div>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="rounded-full p-2 hover:bg-primary-foreground/20">
+              <button onClick={() => setIsOpen(false)} className="rounded-full p-2 transition-colors hover:bg-white/10">
                 <X className="h-5 w-5 text-primary-foreground" />
               </button>
             </div>
 
-            {/* Messages */}
             <div className="flex-1 space-y-3 overflow-y-auto p-4">
               {messages.map((message, index) => (
                 <div key={index} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
@@ -99,7 +99,7 @@ export function AIChatbot() {
                     className={`max-w-[85%] rounded-2xl px-4 py-2.5 ${
                       message.role === "user"
                         ? "rounded-br-md bg-primary text-primary-foreground"
-                        : "rounded-bl-md bg-muted text-foreground"
+                        : "rounded-bl-md border border-border/30 bg-card/50 text-foreground backdrop-blur-sm"
                     }`}
                   >
                     <p className="text-sm">{message.content}</p>
@@ -108,8 +108,7 @@ export function AIChatbot() {
               ))}
             </div>
 
-            {/* Input */}
-            <div className="border-t border-border p-4">
+            <div className="border-t border-white/[0.06] p-4">
               <form
                 onSubmit={(e) => {
                   e.preventDefault()
@@ -121,12 +120,13 @@ export function AIChatbot() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Введите сообщение..."
-                  className="flex-1 rounded-full"
+                  className="flex-1 rounded-full border-border/30 bg-card/30 backdrop-blur-sm"
+                  maxLength={4000}
                 />
                 <Button
                   type="submit"
                   size="icon"
-                  className="h-10 w-10 shrink-0 rounded-full"
+                  className="h-10 w-10 shrink-0 rounded-full btn-glow"
                   disabled={isLoading}
                 >
                   {isLoading ? (

@@ -17,7 +17,7 @@ interface CartDrawerProps {
 
 export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
   const { items, updateQuantity, removeItem, clearCart, total } = useCart()
-  const { user, isAuthenticated, createOrder } = useAuth()
+  const { user, isAuthenticated, createOrder, getProductPrice } = useAuth()
   const [orderPlaced, setOrderPlaced] = useState(false)
 
   const handleCheckout = () => {
@@ -28,7 +28,6 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
     clearCart()
     setOrderPlaced(true)
 
-    // Скрыть сообщение через 5 секунд
     setTimeout(() => {
       setOrderPlaced(false)
       onOpenChange(false)
@@ -37,7 +36,7 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="flex w-full flex-col sm:max-w-md">
+      <SheetContent className="flex w-full flex-col border-l-border/20 bg-background/95 backdrop-blur-xl sm:max-w-md">
         <SheetHeader>
           <SheetTitle className="text-xl">Корзина</SheetTitle>
         </SheetHeader>
@@ -49,7 +48,7 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
             <AlertDescription className="text-green-700 dark:text-green-300">
               <div className="flex items-center gap-2 mt-1">
                 <Mail className="h-4 w-4" />
-                <span>Информация об оплате отправлена на почту {user?.email || "указанную при регистрации"}</span>
+                <span>Информация отправлена на почту {user?.email || "указанную при регистрации"}</span>
               </div>
             </AlertDescription>
           </Alert>
@@ -84,7 +83,7 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1">
                           <h3 className="text-sm font-medium leading-tight text-foreground">{item.name}</h3>
-                          <p className="text-xs text-muted-foreground">{item.article}</p>
+                          <p className="text-xs text-muted-foreground">{item.categoryName}</p>
                         </div>
                         <button
                           onClick={() => removeItem(item.id)}
@@ -109,7 +108,14 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
                             <Plus className="h-3 w-3" />
                           </button>
                         </div>
-                        <span className="font-semibold text-foreground">{item.price} ₽</span>
+                        {(() => {
+                          const p = getProductPrice(item.id, item.price)
+                          return p ? (
+                            <span className="text-sm font-medium text-foreground">~ {p.toLocaleString("ru-RU")} ₽</span>
+                          ) : (
+                            <span className="text-sm text-muted-foreground">x{item.quantity}</span>
+                          )
+                        })()}
                       </div>
                     </div>
                   </div>
@@ -118,11 +124,20 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
 
               <SheetFooter className="flex-col gap-3 border-t border-border pt-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">Итого:</span>
-                  <span className="text-xl font-bold text-foreground">
-                    {total.toLocaleString("ru-RU", { minimumFractionDigits: 2 })} ₽
-                  </span>
+                  <span className="text-muted-foreground">Товаров:</span>
+                  <span className="text-xl font-bold text-foreground">{total} шт.</span>
                 </div>
+                {items.some(i => getProductPrice(i.id, i.price)) && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground">Примерная сумма:</span>
+                    <span className="text-lg font-semibold text-foreground">
+                      ~ {items.reduce((sum, i) => sum + (getProductPrice(i.id, i.price) || 0) * i.quantity, 0).toLocaleString("ru-RU")} ₽
+                    </span>
+                  </div>
+                )}
+                <p className="text-xs text-amber-600 dark:text-amber-400 text-center">
+                  Цены примерные. Итоговую стоимость уточнит менеджер после оформления заявки.
+                </p>
                 <div className="flex gap-2">
                   <Button
                     variant="outline"
@@ -133,7 +148,7 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
                     Очистить
                   </Button>
                   <Button className="flex-1" onClick={handleCheckout} disabled={orderPlaced || items.length === 0}>
-                    {orderPlaced ? "Заказ оформлен" : "Оформить заказ"}
+                    {orderPlaced ? "Заказ оформлен" : "Оформить заявку"}
                   </Button>
                 </div>
               </SheetFooter>
