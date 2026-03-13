@@ -1,0 +1,21 @@
+{
+  "name": "Kultivator Web",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20-bookworm",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Kultivator Web",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  },
+  "postCreateCommand": "cd cultivator-website-2 && npm ci && npm install -g pm2",
+  "postStartCommand": "cd cultivator-website-2 && bash start-prod.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
